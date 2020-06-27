@@ -7,7 +7,7 @@ export default function Home() {
     const percentage = 100;
     return (
         <Container >
-            <Card style={{ width: '18rem' }}>
+            <Card bg="danger" style={{ width: '18rem' }}>
                 <Card.Header>Bootcamper</Card.Header>
                 <Card.Body>
                    <CircularProgressbar value={percentage} text={`${percentage}%`} />

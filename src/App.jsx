@@ -1,4 +1,3 @@
-import './app.css';
 import React from 'react';
 import { BrowserRouter, Switch, Redirect } from "react-router-dom";
 // import StudentRoute from "./routes/StudentRoute";
