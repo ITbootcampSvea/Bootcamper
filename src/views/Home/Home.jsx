@@ -4,7 +4,7 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 
 
 export default function Home() {
-    const percentage = 66;
+    const percentage = 100;
     return (
         <Container >
             <Card style={{ width: '18rem' }}>
