@@ -1,11 +1,28 @@
 .logoImg{
-    width: 7rem;
-    height: 7rem;
+    width: 6.5rem;
+    height: 6.5rem;
     position: absolute;
     left: 1%;
-    top: 5%; 
+    top: 0.2%; 
+    filter: drop-shadow(0.1rem 0.1rem 0.2rem black);
 }
 
-.nav-link:hover{
-    transform: scale(1.2);
+.navText, .navBtn{
+   @include navigationText
+    
+}
+
+
+
+.navText:hover {
+    transform: scale(1.1);
+    background: white;
+    border-radius: 0.3rem;
+   
+}
+
+.navText:active{
+    transform: scale(1.1);
+    background: white;
+    border-radius: 0.3rem;
 }

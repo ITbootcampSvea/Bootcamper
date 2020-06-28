@@ -1,11 +1,8 @@
-
-
 $theme-colors: (
     "info": tomato,
     "light": rgb(235, 242, 243),
-   "dark": $bootcampPrimaryColor,
-   
+    "dark": $bootcampPrimaryColor,
+    
 );
-
 
 @import "~bootstrap/scss/bootstrap";

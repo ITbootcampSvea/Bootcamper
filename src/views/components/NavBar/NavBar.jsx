@@ -12,11 +12,11 @@ export default function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="">
-            <NavLink className='nav-link' to='/home'>Home</NavLink>
-            <NavLink className='nav-link' to='/dd' >Students</NavLink>
-            <NavLink className='nav-link' to='/dd' >Assignments</NavLink>
-            <NavLink className='nav-link' to='/hoddme'>Profile</NavLink>
-           <Button variant='outline-light' size='lg'>Logout</Button>
+            <NavLink className='nav-link navText ' to='/home'>Home</NavLink>
+            <NavLink className='nav-link navText ' to='/students' >Students</NavLink>
+            <NavLink className='nav-link navText ' to='/dd' >Assignments</NavLink>
+            <NavLink className='nav-link navText ' to='/hoddme'>Profile</NavLink>
+           <Button variant='outline-light' size='lg' className='navBtn'>Logout</Button>
 
           
           </Nav>
