@@ -15,7 +15,7 @@ export default function StudentRoute({component: Component, ...rest}){
         )} /> 
         
         :(authService.isLoged()==="Admin")?
-            <Redirect to="/settings" /> : <Redirect to="/login" />   
+            <Redirect to="/students" /> : <Redirect to="/login" />   
 
     );
 };

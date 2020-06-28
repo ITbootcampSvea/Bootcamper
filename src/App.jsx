@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Switch, Redirect } from "react-router-dom";
-// import StudentRoute from "./routes/StudentRoute";
+import StudentRoute from "./routes/StudentRoute";
 import PublicRoute from "./routes/PublicRoute";
 import Home from './views/Home/Home';
 import Login from './views/Login/Login';
+import Students from './views/Students/Students';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
 
       <PublicRoute component={Home} path="/home" />
       <PublicRoute component={Login} path="/login" />
+      <StudentRoute component={Students} path="/students"/>
+{/* 
+        <PublicRoute component={LogIn } path="/login" />
 
 {/* 
         
