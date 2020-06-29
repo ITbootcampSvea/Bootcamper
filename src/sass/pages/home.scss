@@ -2,3 +2,24 @@
     @include pagesBackground;
 }
 
+.sci {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sci li {
+    margin: 0 25px;
+    color: white;
+}
+
+.sci li i {
+    color: white;
+    font-size: 5rem;
+    transition: all 0.7s ease-in-out;
+    filter: drop-shadow(1px 1px 0.5px black);
+  
+}

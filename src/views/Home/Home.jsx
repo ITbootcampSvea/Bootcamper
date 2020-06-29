@@ -41,7 +41,7 @@ export default function Home() {
         switch (true) {
             case (percentage <= 20): progressStyle = {
                 ...defaultCircleStyle,
-                pathColor: 'rgb(184, 78, 57)'
+                pathColor: "#c72828"
             }
                 break;
 
@@ -81,20 +81,30 @@ export default function Home() {
     return (<>
         <NavBar></NavBar>
         <div className='wrapper'>
-            <Container fluid className='aligmentFlexCenter' >
-                <Row>
+            <Container fluid  >
+                <Row >
                     {studentTest.map(el =>
                         <Col className="col-xl-3" key={el.id} test={el}>
-                            <Card className='card' style={{ width: '22rem' }}>
+                            <Card className='card' style={{ width: '18rem' }}>
                                 <Card.Header className='text-center progresCardHeader cardHeaderBackground'>{el.testName}</Card.Header>
                                 <Card.Body>
-                                    <CircularProgressbar styles={buildStyles(applyProgressStyle(el.percentage))} value={el.percentage} text={`${el.percentage}%`} strokeWidth={14} background={true} />
+                                    <CircularProgressbar styles={buildStyles(applyProgressStyle(el.percentage))} value={el.percentage} text={`${el.percentage}%`} strokeWidth={12} background={true} />
                                 </Card.Body>
                             </Card>
                   )
                     </Col>)}
 
                 </Row>
+                    <Row bg='light'>
+                        <Col className="col-xl-3" >
+                            <ul className="sci">
+                                <li><i className="fa fa-html5"></i></li>
+                                <li><i className="fa fa-css3"></i></li>
+                                <li><i className="fa fa-youtube"></i></li>
+                                <li><i className="fa fa-github"></i></li>
+                            </ul>
+                        </Col>
+                    </Row>
             </Container>
         </div>
     </>
