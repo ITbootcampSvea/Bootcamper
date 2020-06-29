@@ -1,0 +1,23 @@
+.loginLogo{
+    width: 6rem;
+    height: 6rem;
+}
+
+.loginFooter{
+    background:linear-gradient(to left, $primaryLight,$secondaryDark,$primaryLight);
+    &:last-child{ 
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+}
+
+.inputLabel{
+    @include HeadingFontSizeM;
+    @include TextShadow;
+}
+
+.loginHeading{
+    @include HeadingFontSizeL;
+    @include TextShadow;
+}
+

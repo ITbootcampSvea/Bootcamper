@@ -3,5 +3,20 @@
     letter-spacing: 0.2rem;
     font-weight: 900;
     font-size: 2rem;
-    text-shadow: 0.06rem 0.06rem 0 $primaryLight;
+   @include TextShadow
+}
+
+.primaryBtnTypography{
+    color: $primaryDark;
+    letter-spacing: 0.2rem;
+    font-weight: 900;
+    font-size: 1rem;
+    text-shadow: 0.06rem 0.06rem 0 rgb(250, 166, 49);
+    background: $bootcampPrimaryColor;
+    width: 60%;
+    @include baseTransition;
+    &:hover{
+        background:rgb(250, 166, 49);
+        transform: scale(1.05);
+    }
 }
