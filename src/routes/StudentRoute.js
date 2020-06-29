@@ -7,15 +7,15 @@ export default function StudentRoute({component: Component, ...rest}){
     
     return (
 
-        (authService.isLoged() && authService.isLoged()!=="Admin")
-        ?
+        // (authService.isLoged() && authService.isLoged()!=="Admin")
+        // ?
         
         <Route {...rest} render={props => (
             <Component {...props} />
         )} /> 
         
-        :(authService.isLoged()==="Admin")?
-            <Redirect to="/students" /> : <Redirect to="/login" />   
+        // :(authService.isLoged()==="Admin")?
+        //     <Redirect to="/students" /> : <Redirect to="/login" />   
 
     );
 };
