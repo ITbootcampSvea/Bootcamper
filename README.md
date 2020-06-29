@@ -1,4 +1,7 @@
 ..............................................................Bootcamper..........................................................................
+
+------------------------------FRONT END-------------------------------------
+
 App je podeljena na dva tipa usera(routa) student, professor.
 
 Komponente:
@@ -37,8 +40,54 @@ Pristup imaju samo studenti
 TestList - sastoji se od liste testova(TestCard)
 TestCard - naziv testa, opcije za download fajla , opis(komentar), rezultat testa(CircuralProgresBar---?still in progres: testResults)
 HomeWorkList -  sastoji se od liste domacih zadataka(HomeWorkCard)
-HomeWorkCard - sastoji se od naziva, indikatora za status domaceg zadatka,
+HomeWorkCard - sastoji se od naziva, indikatora za status domaceg zadatka, rok za zavrsetak(datum, vreme), komentar studenta, polje za unos linka   guthub, dugme za submit, komentar profesora pregleda domaceg.
 
 
+---------------------------------PROFILE-----------------------------
+
+Sadrzi: 
+-sliku(opcija za upload profilne slike i promenu)
+-unos i prikaz osnovnih podataka (info/ ID, ime, prezime, mejl...) - ID, ime, prezime nisu promenljivi
+-opcije za promenu username i password (account)
+-...
+
+---------------------------------SETTINGS-----------------------------
+
+Sadrzi:
+-opciju za kreiranje usera (unos ID, ime, prezime- studenta)
+-opciju za promenu statusa usera (in/active)
+-exportovanje kompletne baze za jednu generaciju (?brisanje i kreiranje nove generacije)
 
 
+------------------------------BACK END LOGIKA-------------------------------------
+
+
+-Kreiranje studenta:
+    Na zahtev profesora kreiranje student enitiija, request prametri {studentID, name, lastname}, kreirani objekat{ID,studentID, name, lastname, emai, username, password} (inicajlni username=studentID, password=111111)
+
+-Kreiranje studenta:
+    Na zahtev profesora kreiranje student enitiija, request prametri {ID, name, lastname}, kreirani objekat{profesorID, name, lastname, emai, username, password} (inicajlni username=profesorID, password=222222)
+
+
+Kreiranje domaceg:
+
+    DomaciMaster: {masterID, naziv, author, rok, fajl, opis} - kreira i edituje profesor
+
+    DomaciStudent: {ID, studentID, masterID, comentar, linkZaGit, Promedbe, status } - kreira profesor, edituje i prof i stud
+
+    statusi domaceg: 
+    - siva - nije predat
+    - plava- predat za pregled
+    - zuta - pregledan ima gresaka
+    - zelena - pregledan bez greske
+    - crvena - nije uradjen u roku
+
+Kreiranje testa: 
+    TestMaster: {ID, masterID, naziv, author,  fajl, opis} kreira i edit prof
+    TestStudent: {ID, masterID, studentID, rezulat} (rezultat inicijalno ima vrednost null) kreira i edit prof
+
+
+Kreiranje dashboard kartica:
+    {ID, profesorID, naziv, links[], opis}
+
+Kreiranje chat-a: soketi...?
