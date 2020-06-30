@@ -13,7 +13,7 @@ NavBar - razliciti linkovi za razlicite usere
 ---------------------------------HOME-------------------------------
 
 ChatBar - komunikacija izmedju korisnika
-DashBoard - grupa kartica generisana po danu i datumu
+DashBoard - grupa kartica generisana po danu i datumu i opcijom za pretragu.
 DashBoardCardGroup - sastoji se od Headera(datum i dan) sa opcijom expend card 
 DashBoardCard - sastoji se od : imena authora, thumbnail(embbed youtube), vreme kreiranja, opis(komentar), opcija za edit i remove(samo za autora kartice)
 AddDashBoardCard - kreiranje nove dashboard kartice, prikazano samo na professor accountu
