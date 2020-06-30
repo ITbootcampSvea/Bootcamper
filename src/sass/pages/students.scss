@@ -9,7 +9,15 @@
     width: 80%;
     max-height:78vh;
     overflow-y: scroll;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
 }
+
+.listContainer::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
+
 
 .indicator {
     display: inline-block;

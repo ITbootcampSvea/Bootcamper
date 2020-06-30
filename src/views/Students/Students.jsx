@@ -4,7 +4,7 @@ import { Container, Card, Row, Col, ListGroup } from 'react-bootstrap';
 
 
 const Students = () => {
-    const studentBase = [{ name: "Milos", lastName: 'Ristic' }, { name: "Pera", lastName: 'Ristic' }, { name: "Jovana", lastName: 'Maksimovic' }, { name: "Zorana", lastName: 'Kec' }, { name: "Milos", lastName: 'Djordjevic' }, { name: "Pavle", lastName: 'Njegus' }, { name: "Leposava", lastName: 'Prodanovic' }, { name: "Marija", lastName: 'Milovanovic' }, { name: "Mihajlo", lastName: 'Popovic' }, { name: "Marija", lastName: 'Strugar' }, { name: "Bogdan", lastName: 'Knezevic' }, { name: "Jugoslav", lastName: 'Colovic' }, { name: "Bojana", lastName: 'Rilak' }, { name: "Ana", lastName: 'Majstorovic' }]
+    const studentBase = [{ name: "Milos", lastName: 'Ristic' }, { name: "Pera", lastName: 'Ristic' }, { name: "Jovana", lastName: 'Maksimovic' }, { name: "Zorana", lastName: 'Kec' }, { name: "Milos", lastName: 'Djordjevic' }, { name: "Pavle", lastName: 'Njegus' }, { name: "Leposava", lastName: 'Prodanovic' }, { name: "Marija", lastName: 'Milovanovic' }, { name: "Mihajlo", lastName: 'Popovic' }, { name: "Marija", lastName: 'Strugar' }, { name: "Bogdan", lastName: 'Knezevic' }, { name: "Jugoslav", lastName: 'Colovic' }, { name: "Bojana", lastName: 'Rilak' }, { name: "Ana", lastName: 'Majstorovic' },{ name: "Ksenija", lastName: 'Lukic'},{ name: "Dejan", lastName: 'Cvetkovic'},{ name: "Ana", lastName: 'Popadic'},{ name: "Tamara", lastName: 'Rodic'},{ name: "Zvezdan", lastName: 'Gladisev'}]
 
 
     return (
