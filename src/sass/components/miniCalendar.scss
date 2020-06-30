@@ -5,12 +5,14 @@
     width: 10rem;
     overflow: hidden;
     border-radius: 0.8rem;
-    box-shadow: 0.08rem 0.08rem 0.2rem $primaryDark;
+    box-shadow: 0.1rem 0.1rem 0 rgb(228, 228, 227);
+    border: 0.01rem solid $secondaryDark;
 }
 
 .calendarLbl {
     display: block;
-    @include HeadingFontSizeS color: grey;
+    @include HeadingFontSizeS;
+     color: grey;
     padding: 0.1rem 0;
     &:first-child {
         position: relative;
@@ -19,6 +21,8 @@
         color: white;
         letter-spacing: 0.1rem;
         font-weight: 600;
+        text-transform: uppercase;
+       
     }
 
     &:nth-child(3) {

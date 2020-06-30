@@ -43,9 +43,16 @@
 }
 
 @mixin HeadingFontSizeS {
-    font-size: 0.7rem;
+    font-size: 1rem;
     letter-spacing: 0.15rem;
     font-weight: 600;
+}
+
+
+@mixin HeadingFontSizeXS {
+    font-size: 0.7rem;
+    letter-spacing: 0.15rem;
+    font-weight: 500;
 }
 
 @mixin TextShadow{

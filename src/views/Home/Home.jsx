@@ -95,10 +95,11 @@ export default function Home() {
                 <footer className='homeFooter aligmentFlexCenter'>
                     <Col className="col-xl-3" >
                         <ul className="sci">
-                            <li><i className="fa fa-html5"></i></li>
-                            <li><i className="fa fa-css3"></i></li>
-                            <li><i className="fa fa-youtube"></i></li>
-                            <li><i className="fa fa-github"></i></li>
+                            <li><a href='https://html5test.com' target='_blank' rel='noreferrer noopener'><i className="fa fa-html5"></i></a></li>
+                            <li><a href='https://www.tutorialrepublic.com/css-tutorial' target='_blank' rel='noreferrer noopener'><i className="fa fa-css3"></i></a></li>
+                            <li><a href='https://www.youtube.com' target='_blank' rel='noreferrer noopener'><i className="fa fa-youtube"></i></a></li>
+                            <li><a href='https://github.com' target='_blank' rel='noreferrer noopener'><i className="fa fa-github"></i></a></li>
+                            <li><a href='https://www.google.com' target='_blank' rel='noreferrer noopener'><i className="fa fa-chrome"></i></a></li>
                         </ul>
                     </Col>
                 </footer>
