@@ -1,5 +1,18 @@
-.wrapper{
+.wrapper {
     @include pagesBackground;
+}
+.homeBody {
+    width: 100%;
+    height: calc(100vh-62px);
+    padding: 5rem 0;
+}
+
+.homeFooter {
+    background: $primaryLight;
+    height: 62px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
 }
 
 .sci {
@@ -12,14 +25,19 @@
 }
 
 .sci li {
-    margin: 0 25px;
-    color: white;
+    margin: 0 4rem;
+    color: $primaryDark;
 }
 
 .sci li i {
-    color: white;
-    font-size: 5rem;
-    transition: all 0.7s ease-in-out;
-    filter: drop-shadow(1px 1px 0.5px black);
-  
+    color: $primaryDark;
+    font-size: 2.5rem;
+    padding: 1.5rem 0;
+    @include baseTransition;
+    cursor: pointer;
+    filter: drop-shadow(0.1rem 0.1rem 0.4rem white);
+    &:hover {
+        color: $secondaryDark;
+        transform: scale(1.1);
+    }
 }

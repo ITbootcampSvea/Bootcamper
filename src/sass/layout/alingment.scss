@@ -4,3 +4,10 @@
     align-items: center;
     @include c-c ;
 }
+
+
+.flexSpaceBeetween{
+    display: flex;
+   align-items: center;
+   justify-content: space-between;
+}

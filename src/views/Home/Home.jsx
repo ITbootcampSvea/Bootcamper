@@ -1,12 +1,15 @@
 import React from 'react'
-import { Container, Card, Row, Col } from 'react-bootstrap';
+import { Container, Card, Row, Col, Accordion, CustomToggle } from 'react-bootstrap';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import NavBar from '../components/NavBar/NavBar';
+import Dashboard from './Dashboard/Dashboard';
 
 
 
 
 export default function Home() {
+  
+
     const studentTest = [
         {
             testName: 'Test1',
@@ -79,32 +82,26 @@ export default function Home() {
 
 
     return (<>
-        <NavBar></NavBar>
-        <div className='wrapper'>
-            <Container fluid  >
-                <Row >
-                    {studentTest.map(el =>
-                        <Col className="col-xl-3" key={el.id} test={el}>
-                            <Card className='card' style={{ width: '18rem' }}>
-                                <Card.Header className='text-center progresCardHeader cardHeaderBackground'>{el.testName}</Card.Header>
-                                <Card.Body>
-                                    <CircularProgressbar styles={buildStyles(applyProgressStyle(el.percentage))} value={el.percentage} text={`${el.percentage}%`} strokeWidth={12} background={true} />
-                                </Card.Body>
-                            </Card>
-                  )
-                    </Col>)}
 
+        <div className='wrapper'>
+            <NavBar></NavBar>
+            <Container fluid  >
+                <Row className='homeBody'>
+                    <Col xl={9}>
+                        <Dashboard ></Dashboard>
+                    </Col>
+                    <Col xl={3} ></Col>
                 </Row>
-                    <Row bg='light'>
-                        <Col className="col-xl-3" >
-                            <ul className="sci">
-                                <li><i className="fa fa-html5"></i></li>
-                                <li><i className="fa fa-css3"></i></li>
-                                <li><i className="fa fa-youtube"></i></li>
-                                <li><i className="fa fa-github"></i></li>
-                            </ul>
-                        </Col>
-                    </Row>
+                <footer className='homeFooter aligmentFlexCenter'>
+                    <Col className="col-xl-3" >
+                        <ul className="sci">
+                            <li><i className="fa fa-html5"></i></li>
+                            <li><i className="fa fa-css3"></i></li>
+                            <li><i className="fa fa-youtube"></i></li>
+                            <li><i className="fa fa-github"></i></li>
+                        </ul>
+                    </Col>
+                </footer>
             </Container>
         </div>
     </>
