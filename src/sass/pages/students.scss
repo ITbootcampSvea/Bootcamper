@@ -40,12 +40,11 @@
 
 .absence li {
     margin: 0 0.3rem;
-    color: $primaryDark;
+    color: $bootcampPrimaryColor;
 }
 
 .absence li i {
-    color: $primaryDark;
+    color: $bootcampPrimaryColor;
     font-size: 1rem;
-    cursor: pointer;
     filter: drop-shadow(0.1rem 0.1rem 0.4rem white);
 }
