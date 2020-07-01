@@ -8,7 +8,7 @@ Komponente:
 
 --------------------------------GLOBAL-------------------------
 NavBar - razliciti linkovi za razlicite usere 
-
+Footer - dodati logo sa linkom ka ITbootcamp sajtu
 
 ---------------------------------HOME-------------------------------
 
