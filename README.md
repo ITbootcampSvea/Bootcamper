@@ -17,10 +17,14 @@ DashBoard - grupa kartica generisana po danu i datumu i opcijom za pretragu.
 DashBoardCardGroup - sastoji se od Headera(datum i dan) sa opcijom expend card 
 DashBoardCard - sastoji se od : imena authora, thumbnail(embbed youtube), vreme kreiranja, opis(komentar), opcija za edit i remove(samo za autora kartice)
 AddDashBoardCard - kreiranje nove dashboard kartice, prikazano samo na professor accountu
+DachboardCardPrevewModal - prikaz celokupnih podataka na kartici
+DachboardCardaddModal - unos podataka za karticu
 DashBoardFooter - sa korisnim ikonicama 
 
 ---------------------------------STUDENTS-----------------------------
 Pristup imaju samo profesori
+StudentGenerationSelector - odabir generacije studenata za prikaz (za generaciju koja nije aktivna onemoguciti modifikovanje podataka-readonly components)
+SearchBar - pretraga studenata po (imenu ili ID-u)
 StudentList - lista studenata(StudentListItem) sa search opcijom
 StudentListItem - sastoji se od : indikatora za status domaceg zadatka, imena i prezimena studenta, status izostanaka
 StudentCard - sastoji se od : slike sa osnovnim podacima studenta(ime, prezime, mail...), CircuralProgresBar za testove, lista domacih zadataka(HomeWorkCard)
@@ -63,10 +67,13 @@ Sadrzi:
 
 
 -Kreiranje studenta:
-    Na zahtev profesora kreiranje student enitiija, request prametri {studentID, name, lastname}, kreirani objekat{ID,studentID, name, lastname, emai, username, password} (inicajlni username=studentID, password=111111)
+    Na zahtev profesora kreiranje student enitiija, request prametri {studentID, name, lastname},
+     kreirani objekat{ID,studentID, generation, name, lastname, emai, username, password} (inicajlni username=studentID, password=111111)
 
--Kreiranje studenta:
-    Na zahtev profesora kreiranje student enitiija, request prametri {ID, name, lastname}, kreirani objekat{profesorID, name, lastname, emai, username, password} (inicajlni username=profesorID, password=222222)
+-Kreiranje profesora:
+    Na zahtev profesora kreiranje student enitiija, request prametri {ID, name, lastname},
+    
+     kreirani objekat{profesorID, name, lastname, emai, username, password} (inicajlni username=profesorID, password=222222)
 
 
 Kreiranje domaceg:
