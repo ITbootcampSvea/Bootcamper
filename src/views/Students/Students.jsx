@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from '../components/NavBar/NavBar';
 import { Container, Card, Row, Col, ListGroup } from 'react-bootstrap';
-import img from "../img/loginbg.jpg";
+import img from "../img/avatar.JPG";
 
 
 const Students = () => {
@@ -33,16 +33,16 @@ const Students = () => {
 
                     <Col xl={7}>
                         <Card>
-                            <Card.Header>
+                            <Card.Header >
                                 <Row>
                                     <Col xl={7}>
-                                        <label id="studentName" class><span>StudentID</span>{studentBase[0].studentID}</label>
-                                        <label id="studentName">{`${studentBase[0].name} ${studentBase[0].lastName}`}</label>
-                                        <label id="studentName">{studentBase[0].phone}</label>
-                                        <label id="studentName">{studentBase[0].email}</label>
+                                        <label id="studentName" ><span className='studentCardSpan'>StudentID: </span>{studentBase[0].studentID}</label>
+                                        <label id="studentName"><span className='studentCardSpan'>Name and Surname: </span>{`${studentBase[0].name} ${studentBase[0].lastName}`}</label>
+                                        <label id="studentName"><span className='studentCardSpan'>Phone: </span>{studentBase[0].phone}</label>
+                                        <label id="studentName"><span className='studentCardSpan'>Email: </span>{studentBase[0].email}</label>
                                     </Col>
                                     <Col xl={5}>
-                                        <Card.Img variant="top" src={img} />
+                                        <Card.Img variant="top" src={img} className='cardAvatar' />
                                     </Col>
                                 </Row>
                             </Card.Header>
