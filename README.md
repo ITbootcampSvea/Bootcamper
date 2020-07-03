@@ -98,3 +98,10 @@ Kreiranje dashboard kartica:
     {ID, profesorID, naziv, links[], opis}
 
 Kreiranje chat-a: soketi...?
+
+
+---dodatno:
+
+-master acount
+-ogranicenja za profesore
+-preuzimanje domacih sa github-a
