@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import NavBar from '../components/NavBar/NavBar';
-import { Container, Card, Row, Col, ListGroup } from 'react-bootstrap';
+import { Container, Card, Row, Col, ListGroup,Dropdown } from 'react-bootstrap';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import mAvatar from "../img/male.png";
 import fAvatar from "../img/female.png";
-import StudentCardHeader from './StudentCardHeader'
+import StudentCardHeader from './StudentCardHeader';
+import SearchBar from '../components/SearchBar/SerachBar'
 
 
 const Students = () => {
@@ -28,7 +29,11 @@ const Students = () => {
         { name: "Ana", lastName: 'Popadic', studentID: "BG-1223", email: "Ana@gmail.com", phone: "065/123-4535", img: { src: `${mAvatar}`, src1: `${fAvatar}` }, generation: '2020-03', gender: 'female' },
         { name: "Tamara", lastName: 'Rodic', studentID: "BG-1221", email: "Tamara@gmail.com", phone: "065/123-4535", img: { src: `${mAvatar}`, src1: `${fAvatar}` }, generation: '2020-03', gender: 'female' },
         { name: "Zvezdan", lastName: 'Gladisev', studentID: "BG-1121", email: "Zvezdan@gmail.com", phone: "065/123-4535", img: { src: `${mAvatar}`, src1: `${fAvatar}` }, generation: '2020-03', gender: 'male' }]
-        const [selectedStudent,setSelectedStudent] = useState('')
+    const [selectedStudent, setSelectedStudent] = useState('');
+    const [students,setStudents]=useState(studentBase);
+
+    
+    
 
     const defaultCircleStyle = {
         textColor: '#2e2a2c',
@@ -106,9 +111,9 @@ const Students = () => {
         },
     ]
 
-    const handleCard = (el) =>{setSelectedStudent(el)}
-       
-    
+    const handleCard = (el) => { setSelectedStudent(el) }
+
+
 
 
     return (
@@ -116,10 +121,11 @@ const Students = () => {
             <NavBar></NavBar>
             <Container fluid className='containerPadding'>
                 <Row>
-                    <Col xl={5} className='aligmentFlexCenter'>
+                    <Col xl={5} clasname='studentListContainer'>
+                       
                         <ListGroup className='listContainer' >
-
-                            {studentBase.map(el => <ListGroup.Item student={el} key={el.studentID} className='listItem' onClick={()=>handleCard(el)}>
+                        <SearchBar students={students} setStudents={setStudents} />
+                            {students.map(el => <ListGroup.Item student={el} key={el.studentID} className='listItem' onClick={() => handleCard(el)}>
                                 <div className='aligmentFlexCenter'>  <span className='indicator'></span></div>
                                 <h4 className={'listItem'}>{el.name} {el.lastName}</h4>
                                 <ul className='absence'>
@@ -138,13 +144,13 @@ const Students = () => {
                         <Card style={{ maxHeight: '78vh' }}>
                             <Card.Header style={{ height: '12rem' }}>
                                 <Row>
-                                  {selectedStudent?  <StudentCardHeader student={selectedStudent}/> :null} 
+                                    {selectedStudent ? <StudentCardHeader student={selectedStudent} /> : null}
                                 </Row>
                             </Card.Header>
                             <Card.Body >
                                 <Card.Body className='aligmentFlexCenter '>
                                     <Row >
-                                        {studentTest.map(el => <Col xl={3}> <Card className='marginPadding' style={{ width: '90%' }}
+                                        {studentTest.map(el => <Col xl={3}> <Card key={el.id} className='marginPadding' style={{ width: '90%' }}
 
                                         >
                                             <Card.Header className='aligmentFlexCenter testName'>{el.testName}</Card.Header>

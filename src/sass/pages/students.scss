@@ -11,6 +11,7 @@
     overflow-y: scroll;
     scrollbar-width: none; 
     -ms-overflow-style: none; 
+    position: relative;
 }
 
 .listContainer::-webkit-scrollbar { /* WebKit */
@@ -78,5 +79,10 @@
 
 .listItem{
     cursor: pointer;
+}
+
+.studentListContainer{
+    display: flex;
+    justify-content: center;
 }
 
