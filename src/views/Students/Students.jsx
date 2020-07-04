@@ -5,7 +5,8 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import mAvatar from "../img/male.png";
 import fAvatar from "../img/female.png";
 import StudentCardHeader from './StudentCardHeader';
-import SearchBar from '../components/SearchBar/SerachBar'
+import SearchBar from '../components/SearchBar/SerachBar';
+import Accordion from '../components/Accordian/Accordian'
 
 
 const Students = () => {
@@ -154,7 +155,7 @@ const Students = () => {
 
                                         >
                                             <Card.Header className='aligmentFlexCenter testName'>{el.testName}</Card.Header>
-                                            <Card.Body>
+                                            <Card.Body >
                                                 <CircularProgressbar className='circleSvg' test={el} key={el.id} value={el.percentage} background={true}
                                                     text={`${el.percentage}%`}
                                                     styles={buildStyles(applyProgressStyle(el.percentage))} ></CircularProgressbar>
@@ -164,19 +165,13 @@ const Students = () => {
 
                                     </Row>
                                 </Card.Body>
-                                <Card.Footer>
+                                <Card.Body>
                                     <Row>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore pariatur illum non amet! Sequi optio possimus iusto! Aspernatur quae a, ab vel quasi doloribus odio, sed molestiae recusandae, cumque iure.
-                                        Tempora, tempore perferendis corrupti illum et repellat voluptate labore animi fugit perspiciatis mollitia quam ex quaerat quasi ipsa. Veritatis accusantium obcaecati natus expedita. Atque placeat dolorem assumenda nulla vel rerum.
-                                        Voluptatibus, quibusdam? Quae temporibus dolorem molestiae fuga autem suscipit deleniti doloremque labore exercitationem, quisquam iure beatae ipsam ullam quo cumque totam esse deserunt odit omnis. Voluptates, voluptatibus. Laboriosam, nisi facere.
-                                        Laborum officiis facere aspernatur quo delectus vero? Qui aliquam itaque provident nisi consectetur. Doloremque quisquam mollitia, ullam asperiores neque, ad facilis ea ex tempore dicta blanditiis, assumenda veniam dignissimos nemo.
-                                        Iste harum alias sed, possimus nesciunt neque pariatur porro, tempore quos amet quibusdam quaerat dolore asperiores expedita, necessitatibus est mollitia natus aspernatur voluptates doloribus ipsa deserunt commodi ex? Minima, atque.
-                                        Animi minus esse repellat beatae pariatur ipsam quod quasi harum veniam, explicabo quae dolorem, cupiditate autem dolores quo deleniti magnam. Odio delectus laudantium consequuntur magnam inventore ipsa obcaecati, distinctio voluptas?
-                                        Nisi obcaecati, rerum nulla quas officia iste! Architecto, voluptatum qui hic enim ullam beatae assumenda tempore cumque accusantium voluptatibus soluta quibusdam necessitatibus odit nesciunt, officiis cum esse neque dicta quae.
-                                        Ducimus magni est sint consequuntur voluptatum nam exercitationem aliquam iusto. Dolore itaque quae maiores nesciunt fuga ipsam repellat magnam hic. Similique nisi facere hic et iste at assumenda voluptate itaque?
-                               Repudiandae doloremque quibusdam vel nam voluptatum quis assumenda maiores molestiae necessitatibus pariatur facere rem ipsum harum vitae esse laudantium rerum deleniti labore id eaque exercitationem sequi quaerat, quas delectus! Soluta?</p>
+                                        <Accordion></Accordion>
+                                        <Accordion></Accordion>
+                                        <Accordion></Accordion>
                                     </Row>
-                                </Card.Footer>
+                                </Card.Body>
                             </Card.Body>
                         </Card>
 
