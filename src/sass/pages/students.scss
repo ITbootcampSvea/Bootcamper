@@ -11,6 +11,7 @@
     overflow-y: scroll;
     scrollbar-width: none; 
     -ms-overflow-style: none; 
+    position: relative;
 }
 
 .listContainer::-webkit-scrollbar { /* WebKit */
@@ -73,10 +74,15 @@
 }
 
 .circleSvg{
-    height: 5rem;
+    height:5rem;
 }
 
 .listItem{
     cursor: pointer;
+}
+
+.studentListContainer{
+    display: flex;
+    justify-content: center;
 }
 

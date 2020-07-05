@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import NavBar from '../components/NavBar/NavBar';
-import { Container, Card, Row, Col, ListGroup } from 'react-bootstrap';
+import { Container, Card, Row, Col, ListGroup,Dropdown } from 'react-bootstrap';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import mAvatar from "../img/male.png";
 import fAvatar from "../img/female.png";
-import StudentCardHeader from './StudentCardHeader'
+import StudentCardHeader from './StudentCardHeader';
+import SearchBar from '../components/SearchBar/SerachBar';
+import Accordion from '../components/Accordian/Accordian'
 
 
 const Students = () => {
@@ -28,7 +30,11 @@ const Students = () => {
         { name: "Ana", lastName: 'Popadic', studentID: "BG-1223", email: "Ana@gmail.com", phone: "065/123-4535", img: { src: `${mAvatar}`, src1: `${fAvatar}` }, generation: '2020-03', gender: 'female' },
         { name: "Tamara", lastName: 'Rodic', studentID: "BG-1221", email: "Tamara@gmail.com", phone: "065/123-4535", img: { src: `${mAvatar}`, src1: `${fAvatar}` }, generation: '2020-03', gender: 'female' },
         { name: "Zvezdan", lastName: 'Gladisev', studentID: "BG-1121", email: "Zvezdan@gmail.com", phone: "065/123-4535", img: { src: `${mAvatar}`, src1: `${fAvatar}` }, generation: '2020-03', gender: 'male' }]
-        const [selectedStudent,setSelectedStudent] = useState('')
+    const [selectedStudent, setSelectedStudent] = useState('');
+    const [students,setStudents]=useState(studentBase);
+
+    
+    
 
     const defaultCircleStyle = {
         textColor: '#2e2a2c',
@@ -106,10 +112,16 @@ const Students = () => {
         },
     ]
 
+<<<<<<< HEAD
     const handleCard = (el) =>{setSelectedStudent(el)}
        
     
     
+=======
+    const handleCard = (el) => { setSelectedStudent(el) }
+
+
+>>>>>>> 10a2a52f0914abb46838f13d4d365f5542ff567e
 
 
     return (
@@ -117,10 +129,11 @@ const Students = () => {
             <NavBar></NavBar>
             <Container fluid className='containerPadding'>
                 <Row>
-                    <Col xl={5} className='aligmentFlexCenter'>
+                    <Col xl={5} clasname='studentListContainer'>
+                       
                         <ListGroup className='listContainer' >
-
-                            {studentBase.map(el => <ListGroup.Item student={el} key={el.studentID} className='listItem' onClick={()=>handleCard(el)}>
+                        <SearchBar students={students} setStudents={setStudents} />
+                            {students.map(el => <ListGroup.Item student={el} key={el.studentID} className='listItem' onClick={() => handleCard(el)}>
                                 <div className='aligmentFlexCenter'>  <span className='indicator'></span></div>
                                 <h4 className={'listItem'}>{el.name} {el.lastName}</h4>
                                 <ul className='absence'>
@@ -139,17 +152,17 @@ const Students = () => {
                         <Card style={{ maxHeight: '78vh' }}>
                             <Card.Header style={{ height: '12rem' }}>
                                 <Row>
-                                  {selectedStudent?  <StudentCardHeader student={selectedStudent}/> :null} 
+                                    {selectedStudent ? <StudentCardHeader student={selectedStudent} /> : null}
                                 </Row>
                             </Card.Header>
                             <Card.Body >
                                 <Card.Body className='aligmentFlexCenter '>
                                     <Row >
-                                        {studentTest.map(el => <Col xl={3}> <Card className='marginPadding' style={{ width: '90%' }}
+                                        {studentTest.map(el => <Col xl={3}> <Card key={el.id} className='marginPadding' style={{ width: '90%' }}
 
                                         >
                                             <Card.Header className='aligmentFlexCenter testName'>{el.testName}</Card.Header>
-                                            <Card.Body>
+                                            <Card.Body >
                                                 <CircularProgressbar className='circleSvg' test={el} key={el.id} value={el.percentage} background={true}
                                                     text={`${el.percentage}%`}
                                                     styles={buildStyles(applyProgressStyle(el.percentage))} ></CircularProgressbar>
@@ -159,19 +172,13 @@ const Students = () => {
 
                                     </Row>
                                 </Card.Body>
-                                <Card.Footer>
+                                <Card.Body>
                                     <Row>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore pariatur illum non amet! Sequi optio possimus iusto! Aspernatur quae a, ab vel quasi doloribus odio, sed molestiae recusandae, cumque iure.
-                                        Tempora, tempore perferendis corrupti illum et repellat voluptate labore animi fugit perspiciatis mollitia quam ex quaerat quasi ipsa. Veritatis accusantium obcaecati natus expedita. Atque placeat dolorem assumenda nulla vel rerum.
-                                        Voluptatibus, quibusdam? Quae temporibus dolorem molestiae fuga autem suscipit deleniti doloremque labore exercitationem, quisquam iure beatae ipsam ullam quo cumque totam esse deserunt odit omnis. Voluptates, voluptatibus. Laboriosam, nisi facere.
-                                        Laborum officiis facere aspernatur quo delectus vero? Qui aliquam itaque provident nisi consectetur. Doloremque quisquam mollitia, ullam asperiores neque, ad facilis ea ex tempore dicta blanditiis, assumenda veniam dignissimos nemo.
-                                        Iste harum alias sed, possimus nesciunt neque pariatur porro, tempore quos amet quibusdam quaerat dolore asperiores expedita, necessitatibus est mollitia natus aspernatur voluptates doloribus ipsa deserunt commodi ex? Minima, atque.
-                                        Animi minus esse repellat beatae pariatur ipsam quod quasi harum veniam, explicabo quae dolorem, cupiditate autem dolores quo deleniti magnam. Odio delectus laudantium consequuntur magnam inventore ipsa obcaecati, distinctio voluptas?
-                                        Nisi obcaecati, rerum nulla quas officia iste! Architecto, voluptatum qui hic enim ullam beatae assumenda tempore cumque accusantium voluptatibus soluta quibusdam necessitatibus odit nesciunt, officiis cum esse neque dicta quae.
-                                        Ducimus magni est sint consequuntur voluptatum nam exercitationem aliquam iusto. Dolore itaque quae maiores nesciunt fuga ipsam repellat magnam hic. Similique nisi facere hic et iste at assumenda voluptate itaque?
-                               Repudiandae doloremque quibusdam vel nam voluptatum quis assumenda maiores molestiae necessitatibus pariatur facere rem ipsum harum vitae esse laudantium rerum deleniti labore id eaque exercitationem sequi quaerat, quas delectus! Soluta?</p>
+                                        <Accordion></Accordion>
+                                        <Accordion></Accordion>
+                                        <Accordion></Accordion>
                                     </Row>
-                                </Card.Footer>
+                                </Card.Body>
                             </Card.Body>
                         </Card>
 

@@ -78,7 +78,7 @@ Sadrzi:
 
 Kreiranje domaceg:
 
-    DomaciMaster: {masterID, naziv, author, rok, fajl, opis} - kreira i edituje profesor
+    DomaciMaster: {masterID, generation, naziv, author, rok, fajl, opis} - kreira i edituje profesor
 
     DomaciStudent: {ID, studentID, masterID, comentar, linkZaGit, Promedbe, status } - kreira profesor, edituje i prof i stud
 
