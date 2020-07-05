@@ -10,11 +10,6 @@ import Accordion from '../components/Accordian/Accordian'
 export default function Home() {
   
 
- 
-
-
-  
-
 
     return (<>
 

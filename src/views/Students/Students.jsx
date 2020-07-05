@@ -101,9 +101,16 @@ const Students = () => {
   
   
 
+<<<<<<< HEAD
+    const handleCard = (el) =>{setSelectedStudent(el)}
+       
+    
+    
+=======
     const handleCard = (el) => { setSelectedStudent(el) }
 
 
+>>>>>>> 10a2a52f0914abb46838f13d4d365f5542ff567e
 
 
     return (
