@@ -1,5 +1,18 @@
 [
     {
+        "name": "Aleksandra",
+        "lastName": "Ristic",
+        "studentID": "BG-1968",
+        "email": "Aleksandra@gmail.com",
+        "phone": "065/123-49935",
+        "img": {
+            "src": "https://i.ya-webdesign.com/images/avatar-png-2.png",
+            "src1": "https://i.ya-webdesign.com/images/avatar-png-images-1.png"
+        },
+        "generation": "2020-03",
+        "gender": "female"
+    },
+    {
         "name": "Milos",
         "lastName": "Ristic",
         "studentID": "BG-1568",
