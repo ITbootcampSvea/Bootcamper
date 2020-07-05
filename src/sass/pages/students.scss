@@ -6,26 +6,21 @@
 }
 
 .listContainer{
-    width: 80%;
+
     max-height:78vh;
-    overflow-y: scroll;
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
+  @include Srcoll;
     position: relative;
 }
 
-.listContainer::-webkit-scrollbar { /* WebKit */
-    width: 0;
-    height: 0;
-}
+
 
 
 .indicator {
     display: inline-block;
-    height: 0.5rem;
-    width: 0.5rem;
+    height: 0.8rem;
+    width: 0.8rem;
     border-radius: 50%;
-    background: rgb(19, 155, 19);
+    background: $indicatorGreen;
     text-align: center;
     filter: drop-shadow(0.09rem 0.09rem 0 white);
 }
@@ -47,7 +42,7 @@
 .absence li i {
     color: $bootcampPrimaryColor;
     font-size: 1rem;
-    filter: drop-shadow(0.1rem 0.1rem 0.4rem white);
+    @include TextShadow;
 }
 
 #studentName{
@@ -74,15 +69,42 @@
 }
 
 .circleSvg{
-    height:5rem;
+    height:3rem;
 }
 
-.listItem{
+.listFiled{
     cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(213,212,197);
 }
 
 .studentListContainer{
     display: flex;
     justify-content: center;
+    width: 100%;
+    
 }
 
+.listItemText{
+    max-width: 7rem;
+    text-align: center;
+    @include HeadingFontSizeS;
+    @include TextShadow;
+}
+
+.homeWorkWrapper{
+    max-height: 25.5rem;
+    @include Srcoll;
+ 
+}
+
+.homeWorkStatusForm{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+}
