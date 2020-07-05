@@ -1,5 +1,5 @@
 [
-    { "name": "Milos", "lastName": "Ristic", "studentID": "BG-1568", "email": "Milos@gmail.com", "phone": "065/123-4535", "img": { "src": "./views/img/male.png/", "src1":"./views/img/female.png/" }, "generation": "2020-03", "gender": "male" },
+    { "name": "Milos", "lastName": "Ristic", "studentID": "BG-1568", "email": "Milos@gmail.com", "phone": "065/123-4535", "img": { "src": "D:Bootcamper/Bootcamper/src/views/img/male.png", "src1":"./views/img/female.png/" }, "generation": "2020-03", "gender": "male" },
     { "name": "Pera", "lastName": "Ristic", "studentID": "BG-1488", "email": "Pera@gmail.com", "phone": "065/123-4535", "img": { "src": "./views/img/male.png/", "src1": "./views/img/female.png/" }, "generation": "2020-03", "gender": "male" },
     { "name": "Jovana", "lastName": "Maksimovic", "studentID": "BG-1775", "email": "Jovana@gmail.com", "phone": "065/123-4535", "img": { "src": "./views/img/male.png/", "src1": "./views/img/female.png/" }, "generation": "2020-03", "gender": "female" },
     { "name": "Zorana", "lastName": "Kec", "studentID": "BG-1178", "email": "Zorana@gmail.com", "phone": "065/123-4535", "img": { "src": "./views/img/male.png/", "src1": "./views/img/female.png/" }, "generation": "2020-03", "gender": "female" },

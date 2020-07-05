@@ -1,7 +1,8 @@
 import React from 'react'
 import { Container, Card, Row, Col } from 'react-bootstrap';
 import NavBar from '../components/NavBar/NavBar';
-import Accordion from '../components/Accordian/Accordian'
+
+
 
 
 
@@ -18,12 +19,12 @@ export default function Home() {
             <Container fluid  >
                 <Row className='homeBody'>
                     <Col xl={9}>
-                      <Accordion></Accordion>
+               
                     </Col>
                     <Col xl={3} ></Col>
                 </Row>
                 <footer className='homeFooter aligmentFlexCenter'>
-                    <Col className="col-xl-3" >
+                    <Col  >
                         <ul className="sci">
                             <li><a href='https://html5test.com' target='_blank' rel='noreferrer noopener'><i className="fa fa-html5"></i></a></li>
                             <li><a href='https://www.tutorialrepublic.com/css-tutorial' target='_blank' rel='noreferrer noopener'><i className="fa fa-css3"></i></a></li>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import NavBar from '../components/NavBar/NavBar';
-import { Container, Card, Row, Col, ListGroup, Dropdown } from 'react-bootstrap';
+import { Container, Card, Row, Col, ListGroup} from 'react-bootstrap';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import mAvatar from "../img/male.png";
 import fAvatar from "../img/female.png";
@@ -34,19 +34,17 @@ const Students = () => {
     //     { name: "Ana", lastName: 'Popadic', studentID: "BG-1223", email: "Ana@gmail.com", phone: "065/123-4535", img: { src: `${mAvatar}`, src1: `${fAvatar}` }, generation: '2020-03', gender: 'female' },
     //     { name: "Tamara", lastName: 'Rodic', studentID: "BG-1221", email: "Tamara@gmail.com", phone: "065/123-4535", img: { src: `${mAvatar}`, src1: `${fAvatar}` }, generation: '2020-03', gender: 'female' },
     //     { name: "Zvezdan", lastName: 'Gladisev', studentID: "BG-1121", email: "Zvezdan@gmail.com", phone: "065/123-4535", img: { src: `${mAvatar}`, src1: `${fAvatar}` }, generation: '2020-03', gender: 'male' }]
+    
+    
     const [selectedStudent, setSelectedStudent] = useState('');
     const [students, setStudents] = useState(AllStudent);
-
-
-
 
     const defaultCircleStyle = {
         textColor: '#2e2a2c',
         trailColor: '#2e2a2c',
         backgroundColor: 'white'
-
-
     }
+
     const applyProgressStyle = (percentage) => {
         console.warn(percentage)
 
@@ -58,8 +56,6 @@ const Students = () => {
                 background: true
             }
                 break;
-
-
 
             case (percentage > 20 && percentage <= 50): progressStyle = {
                 ...defaultCircleStyle,
@@ -101,16 +97,10 @@ const Students = () => {
   
   
 
-<<<<<<< HEAD
     const handleCard = (el) =>{setSelectedStudent(el)}
        
     
     
-=======
-    const handleCard = (el) => { setSelectedStudent(el) }
-
-
->>>>>>> 10a2a52f0914abb46838f13d4d365f5542ff567e
 
 
     return (

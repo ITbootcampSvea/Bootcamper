@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Accordion, Row, Col, Form, Button, ButtonGroup } from 'react-bootstrap';
 
-export default function Accordian({info}) {
+export default function Accordian({ info }) {
     let date = new Date();
     let dayNumber = date.getDate();
     let month = date.getMonth();
@@ -12,6 +12,13 @@ export default function Accordian({info}) {
     let style = {
         width: '100%',
         marginBottom: '1rem'
+    }
+
+    const indicator = document.getElementById('statusIndicator');
+
+
+    const handleRed = () => {
+        console.log(indicator)
     }
 
 
@@ -29,8 +36,8 @@ export default function Accordian({info}) {
                                 <label className='calendarLbl'>{dayNumber}</label>
                                 <label className='calendarLbl'>{year}</label>
                             </div>
-                            <label className='testName'>{info.homeWorkName}</label>
-                            <span className='indicator'></span>
+                            <label className='testName' style={{ maxWidth: '20rem', width: '20rem' }}>{info.homeWorkName}</label>
+                            <span id='statusIndicator' className='indicator'></span>
                             <i className="fa fa-angle-down miniCalendarIcon"></i>
 
                         </Accordion.Toggle>
@@ -42,7 +49,7 @@ export default function Accordian({info}) {
                                     <Card>
                                         <Card.Header className='aligmentFlexCenter testName '>Task Description </Card.Header>
                                         <Card.Body className='aligmentFlexCenter'><p>{info.homeWorkContent}
-                                    </p> </Card.Body>
+                                        </p> </Card.Body>
                                     </Card>
                                 </Col>
                                 <Col xl={4}>
@@ -72,11 +79,11 @@ export default function Accordian({info}) {
                             <Row style={{ marginTop: '2rem' }}>
                                 <Form className='homeWorkStatusForm'>
                                     <Form.Group>
-                                        <Form.File id="exampleFormControlFile1" />
+                                        <i class="fa fa-cloud-download downloadIcon" title='GitHub clone'></i>
                                     </Form.Group>
-                                    <ButtonGroup  size="sm" className="mb-2">
+                                    <ButtonGroup size="sm" className="mb-2">
                                         <Button variant='green'>Green</Button>
-                                        <Button variant='red'>Red</Button>
+                                        <Button variant='red' onClick={() => handleRed()}>Red</Button>
                                         <Button variant='blue'>Blue</Button>
                                         <Button variant='yellow'>Yellow</Button>
                                         <Button variant='grey'>Grey</Button>

@@ -45,6 +45,18 @@
     @include TextShadow;
 }
 
+.downloadIcon{
+    color: $primaryDark;
+    font-size: 2.7rem;
+    @include TextShadow;
+    @include baseTransition;
+&:hover{
+    transform: scale(1.1);
+    color: $secondaryDark;
+
+}
+}
+
 #studentName{
     display: block;
     @include HeadingFontSizeM;
