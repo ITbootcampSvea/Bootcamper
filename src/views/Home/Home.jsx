@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container, Card, Row, Col } from 'react-bootstrap';
 import NavBar from '../components/NavBar/NavBar';
-
-
+import Dashboard from './Dashboard/Dashboard';
+import Chat from '../components/Chat/Chat';
 
 
 
@@ -19,9 +19,11 @@ export default function Home() {
             <Container fluid  >
                 <Row className='homeBody'>
                     <Col xl={9}>
-               
+                        <Dashboard />
                     </Col>
-                    <Col xl={3} ></Col>
+                    <Col xl={3}>
+                        <Chat />
+                    </Col>
                 </Row>
                 <footer className='homeFooter aligmentFlexCenter'>
                     <Col  >
