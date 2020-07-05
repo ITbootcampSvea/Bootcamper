@@ -14,12 +14,10 @@ export default function Accordian({ info }) {
         marginBottom: '1rem'
     }
 
-    const indicator = document.getElementById('statusIndicator');
+  
 
 
-    const handleRed = () => {
-        console.log(indicator)
-    }
+ 
 
 
 
@@ -83,7 +81,7 @@ export default function Accordian({ info }) {
                                     </Form.Group>
                                     <ButtonGroup size="sm" className="mb-2">
                                         <Button variant='green'>Green</Button>
-                                        <Button variant='red' onClick={() => handleRed()}>Red</Button>
+                                        <Button variant='red' >Red</Button>
                                         <Button variant='blue'>Blue</Button>
                                         <Button variant='yellow'>Yellow</Button>
                                         <Button variant='grey'>Grey</Button>
