@@ -22,12 +22,12 @@ export default function Chat(props) {
     {
       name: "Marko Planic",
       message: "Hello",
-      time: "14:55",
+      time: "15:06",
     },
     {
       name: "Milos Ristic",
       message: "Aj u Dunju! Dolazim u Bg sutra popodne!",
-      time: "14:55",
+      time: "17:00",
     },
   ];
 
@@ -38,10 +38,13 @@ export default function Chat(props) {
   const styleLoggedIn = {
     background: "darkOrange",
     padding: "0.4rem",
+    display:"inline-block"
   };
 
   const styleOtherUser = {
     padding: "0.4rem",
+    display:"inline-block",
+    
   };
 
   const [chat, setChat] = useState(chatMessages);
@@ -73,24 +76,34 @@ export default function Chat(props) {
         <Card.Body style={{ overflowY: "scroll", height: "20rem" }}>
           {chat.map((message) => (
             <Row>
-              <Col xl={4}>
+              <Col xl={3}>
                 <OverlayTrigger
-                  overlay={<Tooltip id={`tooltip-top`}>{message.name}</Tooltip>}
+                  overlay={<Tooltip>{message.name}</Tooltip>}
                 >
-                  <p>
+                    
+                    <p>
                     <b>{ message.name == loggedUser ? "" : abbrev(message.name) + ':'}</b>
                   </p>
+                    
+                  
                 </OverlayTrigger>
               </Col>
-              <Col>
+              
+              <Col style={{ textAlign: message.name == loggedUser ? "right" : "left"}}>
+              <OverlayTrigger
+                  overlay={<Tooltip>{message.time}</Tooltip>}
+                >
                 <Card
                   style={
+                      
                     message.name == loggedUser ? styleLoggedIn : styleOtherUser
                   }
                 >
                   <p>{message.message}</p>
                 </Card>
+                </OverlayTrigger>
                 <br></br>
+                
               </Col>
             </Row>
           ))}
