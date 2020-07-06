@@ -31,9 +31,9 @@ export default function Chat(props) {
     },
   ];
 
-  //   const chatStyle = {
-  //     height: "30rem"
-  //   }
+    const chatStyle = {
+      width: "20rem"
+    }
 
   const styleLoggedIn = {
     background: "darkOrange",
@@ -61,13 +61,12 @@ export default function Chat(props) {
   };
 
   const abbrev = (fullName) => {
-    let arr = fullName.split(" ");
-    return arr[0][0] + arr[1][0];
+    return fullName.split(" ").map((el) => el[0]).join("");
   };
 
   return (
     <div className="container">
-      <Card>
+      <Card style={chatStyle}>
         <Card.Header style={{ fontWeight: "900", textAlign: "center" }}>
           Walkie-talkie
         </Card.Header>
@@ -79,7 +78,7 @@ export default function Chat(props) {
                   overlay={<Tooltip id={`tooltip-top`}>{message.name}</Tooltip>}
                 >
                   <p>
-                    <b>{abbrev(message.name)}:</b>
+                    <b>{ message.name == loggedUser ? "" : abbrev(message.name) + ':'}</b>
                   </p>
                 </OverlayTrigger>
               </Col>

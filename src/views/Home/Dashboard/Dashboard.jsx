@@ -113,7 +113,7 @@ export default function Dashboard() {
             <br></br>
             <CardDeck>
               {searchResults.map((single, index) => (
-                <Col xl={4}>
+                <Col sd={4} xl={4}>
                   <Card
                     style={cardStyle}
                     onClick={() => {
@@ -128,7 +128,7 @@ export default function Dashboard() {
               ))}
 
               {searchTerm == "" ? (
-                <Col xl={4}>
+                <Col sd={4} xl={4}>
                   <Card style={cardStyle}>
                     <div style={{ margin:"auto" }}>
                       <Card.Img

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Card, Row, Col } from "react-bootstrap";
+import { Container, Card, Row, Col, Navbar } from "react-bootstrap";
 import NavBar from "../components/NavBar/NavBar";
 import Dashboard from "./Dashboard/Dashboard";
 import Chat from "../components/Chat/Chat";
@@ -14,8 +14,11 @@ export default function Home() {
             <Col xl={9}>
               <Dashboard />
             </Col>
-            <Col xl={3}>
-              <Chat />
+
+            <Col xl={3} >
+              <div style={{position:"fixed"}}>
+                <Chat />
+              </div>
             </Col>
           </Row>
           <footer className="homeFooter aligmentFlexCenter">
