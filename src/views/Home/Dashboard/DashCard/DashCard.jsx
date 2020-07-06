@@ -23,9 +23,12 @@ export default function DashCard(props) {
 
   return (
     <div>
-      <p>{singleCard.time}</p>
-      <h2>{title}</h2>
-      <p>{text}</p>
+      <Card.Header>{singleCard.time}</Card.Header>
+
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>{text}</Card.Text>
+      </Card.Body>
     </div>
   );
 }

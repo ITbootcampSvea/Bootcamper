@@ -110,6 +110,7 @@ export default function Dashboard() {
               <label className="calendarLbl">{dayNumber}</label>
               <label className="calendarLbl">{year}</label>
             </div>
+            <br></br>
             <CardDeck>
               {searchResults.map((single, index) => (
                 <Col xl={4}>
@@ -129,8 +130,8 @@ export default function Dashboard() {
               {searchTerm == "" ? (
                 <Col xl={4}>
                   <Card style={cardStyle}>
-                    <div>
-                      <Image
+                    <div style={{ margin:"auto" }}>
+                      <Card.Img
                         style={{ height: "8rem", width: "8rem" }}
                         src={plussign}
                       />
