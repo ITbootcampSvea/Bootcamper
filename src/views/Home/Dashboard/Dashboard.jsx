@@ -65,6 +65,15 @@ export default function Dashboard() {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quam adipisci esse corrupti veritatis, quisquam architecto exercitationem illum ipsam soluta dolores, natus reprehenderit in vero laboriosam, maxime repellendus consectetur molestiae.Delectus sed recusandae doloribus non nemo necessitatibus, esse obcaecati quisquam corrupti possimus asperiores eius nostrum vel, assumenda saepe ipsum, est voluptate magnam illum maxime pariatur?",
       links: [],
     },
+    {
+      date: "4 7 2020",
+      time: "12:17",
+      title: "Redux",
+      author: "Dusan Bobicic",
+      text:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quam adipisci esse corrupti veritatis, quisquam architecto exercitationem illum ipsam soluta dolores, natus reprehenderit in vero laboriosam, maxime repellendus consectetur molestiae.Delectus sed recusandae doloribus non nemo necessitatibus, esse obcaecati quisquam corrupti possimus asperiores eius nostrum vel, assumenda saepe ipsum, est voluptate magnam illum maxime pariatur?",
+      links: [],
+    },
   ];
 
   const [modalShow, setModalShow] = React.useState(false);
@@ -74,7 +83,6 @@ export default function Dashboard() {
     height: "15rem",
     padding: "0.5rem",
     textAlign: "center",
-    verticalAlign: "middle",
   };
 
   return (
@@ -122,7 +130,7 @@ export default function Dashboard() {
                   <Card style={cardStyle}>
                     <div>
                       <Image
-                        style={{ height: "150px", width: "150px" }}
+                        style={{ height: "8rem", width: "8rem" }}
                         src={plussign}
                       />
                     </div>
