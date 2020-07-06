@@ -29,6 +29,10 @@ export default function Chat(props) {
     },
   ];
 
+  const chatCardStyle = {
+    
+  }
+
   const [chat, setChat] = useState(chatMessages);
   const [singleMessage, setMessage] = useState("");
 
@@ -45,12 +49,12 @@ export default function Chat(props) {
     } else alert("You didn't type anything!");
   };
 
+
+
   return (
     <div className="container">
       <Card>
-        <Card.Header>
-          <Card.Title>Messenger</Card.Title>
-        </Card.Header>
+        <Card.Header style={{ fontWeight:"900", textAlign: "center" }}>Messenger</Card.Header>
         <Card.Body>
           {chat.map((message) => (
             <Row>
@@ -58,9 +62,10 @@ export default function Chat(props) {
                 <p>{message.name}:</p>
               </Col>
               <Col>
-                <Card>
+                <Card border={message.name == loggedUser ? 'dark' : ""} style={{ padding: "0.4rem" }}>
                   <p>{message.message}</p>
                 </Card>
+                <br></br>
               </Col>
             </Row>
           ))}
