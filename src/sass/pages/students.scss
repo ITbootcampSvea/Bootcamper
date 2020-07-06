@@ -20,9 +20,38 @@
     height: 0.8rem;
     width: 0.8rem;
     border-radius: 50%;
-    background: $indicatorGreen;
     text-align: center;
     filter: drop-shadow(0.09rem 0.09rem 0 white);
+}
+
+.listIndicator{
+    @extend .indicator;
+    background: $indicatorGreen;
+}
+
+.indicator_green{
+    @extend .indicator;
+    background: $indicatorGreen;
+}
+
+.indicator_grey{
+    @extend .indicator;
+    background: $indicatorGrey;
+}
+
+.indicator_red{
+    @extend .indicator;
+    background: $indicatorRed;
+}
+
+.indicator_yellow{
+    @extend .indicator;
+    background: $indicatorYellow;
+}
+
+.indicator_blue{
+    @extend .indicator;
+    background: $indicatorBlue;
 }
 
 .absence {

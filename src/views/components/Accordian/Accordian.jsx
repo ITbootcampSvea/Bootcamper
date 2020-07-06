@@ -1,24 +1,27 @@
 import React from 'react';
 import { Card, Accordion, Row, Col, Form, Button, ButtonGroup } from 'react-bootstrap';
 
-export default function Accordian({ info }) {
+export default function Accordian({ info, status, setStatus }) {
     let date = new Date();
     let dayNumber = date.getDate();
-    let month = date.getMonth();
     let dayName = date.toLocaleString('en-US', { weekday: 'long' });
     let monthName = date.toLocaleString('en-US', { month: 'long' });
     let year = date.getFullYear();
+  
+    
 
     let style = {
         width: '100%',
         marginBottom: '1rem'
     }
 
-  
+    const indicator = `indicator_${info.homeWorkStatus}`
 
+    const handleChangeColor = (color) =>{
+        const changedValue = [...status].map(x => (x.id === info.id ?  {...x,"homeWorkStatus":color } : x))
+        setStatus(changedValue)
 
- 
-
+    }
 
 
     return (
@@ -35,7 +38,7 @@ export default function Accordian({ info }) {
                                 <label className='calendarLbl'>{year}</label>
                             </div>
                             <label className='testName' style={{ maxWidth: '20rem', width: '20rem' }}>{info.homeWorkName}</label>
-                            <span id='statusIndicator' className='indicator'></span>
+                            <span id='statusIndicator' className={indicator}></span>
                             <i className="fa fa-angle-down miniCalendarIcon"></i>
 
                         </Accordion.Toggle>
@@ -80,11 +83,11 @@ export default function Accordian({ info }) {
                                         <i class="fa fa-cloud-download downloadIcon" title='GitHub clone'></i>
                                     </Form.Group>
                                     <ButtonGroup size="sm" className="mb-2">
-                                        <Button variant='green'>Green</Button>
-                                        <Button variant='red' >Red</Button>
-                                        <Button variant='blue'>Blue</Button>
-                                        <Button variant='yellow'>Yellow</Button>
-                                        <Button variant='grey'>Grey</Button>
+                                        <Button variant='green' style={{ width: '5rem' }} onClick={()=>handleChangeColor("green")}>Green</Button>
+                                        <Button variant='red' style={{ width: '5rem' }} onClick={()=>handleChangeColor("red")} >Red</Button>
+                                        <Button variant='blue' style={{ width: '5rem' }} onClick={()=>handleChangeColor("blue")}>Blue</Button>
+                                        <Button variant='yellow' style={{ width: '5rem' }} onClick={()=>handleChangeColor("yellow")}>Yellow</Button>
+                                        <Button variant='grey' style={{ width: '5rem' }} onClick={()=>handleChangeColor("grey")}>Grey</Button>
                                     </ButtonGroup>
                                 </Form>
                             </Row>
