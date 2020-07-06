@@ -6,32 +6,43 @@ import {
   FormControl,
   Row,
   Col,
+  Tooltip,
+  OverlayTrigger,
 } from "react-bootstrap";
 
 export default function Chat(props) {
-  const loggedUser = "Danko";
+  const loggedUser = "Danko Novovic";
 
   const chatMessages = [
     {
-      name: "Danko",
+      name: "Danko Novovic",
       message: "Cao ljudi",
       time: "14:55",
     },
     {
-      name: "Marko",
+      name: "Marko Planic",
       message: "Hello",
       time: "14:55",
     },
     {
-      name: "Milos",
+      name: "Milos Ristic",
       message: "Aj u Dunju! Dolazim u Bg sutra popodne!",
       time: "14:55",
     },
   ];
 
-  const chatCardStyle = {
-    
-  }
+  //   const chatStyle = {
+  //     height: "30rem"
+  //   }
+
+  const styleLoggedIn = {
+    background: "darkOrange",
+    padding: "0.4rem",
+  };
+
+  const styleOtherUser = {
+    padding: "0.4rem",
+  };
 
   const [chat, setChat] = useState(chatMessages);
   const [singleMessage, setMessage] = useState("");
@@ -49,20 +60,35 @@ export default function Chat(props) {
     } else alert("You didn't type anything!");
   };
 
-
+  const abbrev = (fullName) => {
+    let arr = fullName.split(" ");
+    return arr[0][0] + arr[1][0];
+  };
 
   return (
     <div className="container">
       <Card>
-        <Card.Header style={{ fontWeight:"900", textAlign: "center" }}>Messenger</Card.Header>
-        <Card.Body>
+        <Card.Header style={{ fontWeight: "900", textAlign: "center" }}>
+          Walkie-talkie
+        </Card.Header>
+        <Card.Body style={{ overflowY: "scroll", height: "20rem" }}>
           {chat.map((message) => (
             <Row>
               <Col xl={4}>
-                <p>{message.name}:</p>
+                <OverlayTrigger
+                  overlay={<Tooltip id={`tooltip-top`}>{message.name}</Tooltip>}
+                >
+                  <p>
+                    <b>{abbrev(message.name)}:</b>
+                  </p>
+                </OverlayTrigger>
               </Col>
               <Col>
-                <Card border={message.name == loggedUser ? 'dark' : ""} style={{ padding: "0.4rem" }}>
+                <Card
+                  style={
+                    message.name == loggedUser ? styleLoggedIn : styleOtherUser
+                  }
+                >
                   <p>{message.message}</p>
                 </Card>
                 <br></br>
