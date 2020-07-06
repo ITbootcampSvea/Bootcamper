@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Card, Row, Col, Navbar } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import NavBar from "../components/NavBar/NavBar";
 import Dashboard from "./Dashboard/Dashboard";
 import Chat from "../components/Chat/Chat";

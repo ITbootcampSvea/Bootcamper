@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   Card,
   InputGroup,
@@ -6,7 +6,6 @@ import {
   CardDeck,
   Row,
   Col,
-  Image,
 } from "react-bootstrap";
 import DashCard from "../Dashboard/DashCard/DashCard";
 import DashCardModal from "../Dashboard/DashCardModal/DashCardModal";
@@ -20,18 +19,14 @@ export default function Dashboard() {
   let monthName = date.toLocaleString("en-US", { month: "long" });
   let year = date.getFullYear();
 
-  console.log(dayNumber, month + 1, year);
-
   const [searchTerm, setSearchTerm] = React.useState("");
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
-  const [searchResults, setSearchResults] = React.useState([]);
-
   React.useEffect(() => {
-    const results = data.filter((card) =>
+    const results = searchResults.filter((card) =>
       card.title.toLowerCase().includes(searchTerm)
     );
     setSearchResults(results);
@@ -76,6 +71,8 @@ export default function Dashboard() {
     },
   ];
 
+  const [searchResults, setSearchResults] = React.useState(data);
+
   const [modalShow, setModalShow] = React.useState(false);
   const [modalDataIndex, setModalDataIndex] = React.useState(0);
 
@@ -88,21 +85,20 @@ export default function Dashboard() {
   return (
     <div className="container">
       <Row>
-        <Col xl={6}>
-          <InputGroup className="searchBar">
-            <FormControl
-              placeholder="What would you like to find?"
-              aria-label="Search dashboard"
-              aria-describedby="basic-addon2"
-              id="searchInput"
-              onChange={(e) => handleChange(e)}
-            />
-          </InputGroup>
-        </Col>
-      </Row>
-
-      <Row>
         <Col xl={12}>
+          <Row>
+            <Col xl={6}>
+              <InputGroup className="searchBar">
+                <FormControl
+                  placeholder="What would you like to find?"
+                  aria-label="Search dashboard"
+                  aria-describedby="basic-addon2"
+                  id="searchInput"
+                  onChange={(e) => handleChange(e)}
+                />
+              </InputGroup>
+            </Col>
+          </Row>
           <Card>
             <div className="calendar">
               <label className="calendarLbl">{monthName}</label>
@@ -113,7 +109,7 @@ export default function Dashboard() {
             <br></br>
             <CardDeck>
               {searchResults.map((single, index) => (
-                <Col sd={4} xl={4}>
+                <Col xl={4} key={index}>
                   <Card
                     style={cardStyle}
                     onClick={() => {
@@ -127,10 +123,10 @@ export default function Dashboard() {
                 </Col>
               ))}
 
-              {searchTerm == "" ? (
+              {searchTerm === "" ? (
                 <Col sd={4} xl={4}>
                   <Card style={cardStyle}>
-                    <div style={{ margin:"auto" }}>
+                    <div style={{ margin: "auto" }}>
                       <Card.Img
                         style={{ height: "8rem", width: "8rem" }}
                         src={plussign}
