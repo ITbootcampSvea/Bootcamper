@@ -94,10 +94,8 @@ const Students = () => {
                             </div>
                         </ListGroup>
                     </Col>
-
-
                     <Col xl={7}>
-                        <Card style={{ maxHeight: '82.5vh' }}>
+                        <Card style={{ maxHeight: '82.5vh'}} >
                             <Card.Header style={{ height: '12rem' }}>
                                 <Row>
                                     {selectedStudent ? <StudentCardHeader student={selectedStudent} /> : null}
@@ -117,12 +115,11 @@ const Students = () => {
 
                                             </Card.Body>
                                         </Card></Col>)}
-
                                     </Row>
                                 </Card.Body>
                                 <Card.Body className='homeWorkWrapper'>
                                     <Row>
-                                        {status.map(el => <Accordion info={el} key={el.id} status={status} setStatus={setStatus}/>)}
+                                        {status.map(el => <Accordion info={el} key={el.id} status={status} setStatus={setStatus} />)}
                                     </Row>
                                 </Card.Body>
                             </Card.Body>

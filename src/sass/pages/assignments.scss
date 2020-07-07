@@ -1,0 +1,26 @@
+.assignmentsBody {
+    width: 100%;
+    height: calc(100vh - 62px);
+}
+
+
+.assCardHeading{
+    @include HeadingFontSizeL;
+    @include TextShadow;
+}
+
+.assTableHeading{
+    @include HeadingFontSizeS;
+    color:$secondaryLight ;
+}
+
+.assTableBody{
+    max-height: 35rem;
+    @include Srcoll;
+    position: relative;
+}
+
+.assTableText{
+    @include HeadingFontSizeXS;
+    color:$secondaryLight ;
+}

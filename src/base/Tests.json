@@ -1,12 +1,14 @@
 [
     {
         "testName": "Test1",
+        "dueDate": "15.08.2020 14:00",
         "percentage": 20,
         "id": 1
     },
 
     {
         "testName": "Test2",
+        "dueDate": "22.07.2020 14:00",
         "percentage": 43,
         "id": 2
     },
@@ -14,11 +16,13 @@
     {
         "testName": "Test3",
         "percentage": 62,
+        "dueDate": "05.07.2020 14:00",
         "id": 3
     },
 
     {
         "testName": "Test4",
+        "dueDate": "24.06.2020 14:00",
         "percentage": 89,
         "id": 4
     }

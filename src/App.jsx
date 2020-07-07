@@ -5,6 +5,7 @@ import PublicRoute from "./routes/PublicRoute";
 import Home from './views/Home/Home';
 import Login from './views/Login/Login';
 import Students from './views/Students/Students';
+import Assignments from './views/Assignments/Assignments'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <PublicRoute component={Home} path="/home" />
       <PublicRoute component={Login} path="/login" />
       <StudentRoute component={Students} path="/students"/>
+      <StudentRoute component={Assignments} path="/assigments"/>
 {/* 
         <PublicRoute component={LogIn } path="/login" />
 
