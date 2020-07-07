@@ -56,7 +56,11 @@ export default function Chat(props) {
   const handleCreateMessage = (e) => {
     if (singleMessage !== "") {
       let newChat = chat;
-      newChat.push({ name: loggedUser, message: singleMessage, time: currentTime });
+      newChat.push({
+        name: loggedUser,
+        message: singleMessage,
+        time: currentTime,
+      });
       setChat(newChat);
       setMessage("");
     } else alert("You didn't type anything!");
@@ -70,7 +74,7 @@ export default function Chat(props) {
   };
 
   const time = new Date();
-  const currentTime = time.getHours() + ':' + time.getMinutes();
+  const currentTime = time.getHours() + ":" + time.getMinutes();
 
   return (
     <div className="container">
@@ -109,7 +113,6 @@ export default function Chat(props) {
                     <p>{message.message}</p>
                   </Card>
                 </OverlayTrigger>
-                <br></br>
               </Col>
             </Row>
           ))}

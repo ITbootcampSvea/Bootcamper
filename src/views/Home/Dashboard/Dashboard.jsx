@@ -9,6 +9,7 @@ import {
 } from "react-bootstrap";
 import DashCard from "../Dashboard/DashCard/DashCard";
 import DashCardModal from "../Dashboard/DashCardModal/DashCardModal";
+import CreateDashCardModal from "../Dashboard/CreateDashCardModal/CreateDashCardModal";
 import plussign from "../../img/plussign.png";
 
 export default function Dashboard() {
@@ -40,7 +41,7 @@ export default function Dashboard() {
       author: "Cvijan Peranovic",
       text:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quam adipisci esse corrupti veritatis, quisquam architecto exercitationem illum ipsam soluta dolores, natus reprehenderit in vero laboriosam, maxime repellendus consectetur molestiae.Delectus sed recusandae doloribus non nemo necessitatibus, esse obcaecati quisquam corrupti possimus asperiores eius nostrum vel, assumenda saepe ipsum, est voluptate magnam illum maxime pariatur?",
-      links: [],
+      links: []
     },
     {
       date: "4 7 2020",
@@ -49,7 +50,7 @@ export default function Dashboard() {
       author: "Dusan Bobicic",
       text:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quam adipisci esse corrupti veritatis, quisquam architecto exercitationem illum ipsam soluta dolores, natus reprehenderit in vero laboriosam, maxime repellendus consectetur molestiae.Delectus sed recusandae doloribus non nemo necessitatibus, esse obcaecati quisquam corrupti possimus asperiores eius nostrum vel, assumenda saepe ipsum, est voluptate magnam illum maxime pariatur?",
-      links: [],
+      links: []
     },
     {
       date: "4 7 2020",
@@ -58,7 +59,7 @@ export default function Dashboard() {
       author: "Cvijan Peranovic",
       text:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quam adipisci esse corrupti veritatis, quisquam architecto exercitationem illum ipsam soluta dolores, natus reprehenderit in vero laboriosam, maxime repellendus consectetur molestiae.Delectus sed recusandae doloribus non nemo necessitatibus, esse obcaecati quisquam corrupti possimus asperiores eius nostrum vel, assumenda saepe ipsum, est voluptate magnam illum maxime pariatur?",
-      links: [],
+      links: []
     },
     {
       date: "4 7 2020",
@@ -67,14 +68,17 @@ export default function Dashboard() {
       author: "Dusan Bobicic",
       text:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quam adipisci esse corrupti veritatis, quisquam architecto exercitationem illum ipsam soluta dolores, natus reprehenderit in vero laboriosam, maxime repellendus consectetur molestiae.Delectus sed recusandae doloribus non nemo necessitatibus, esse obcaecati quisquam corrupti possimus asperiores eius nostrum vel, assumenda saepe ipsum, est voluptate magnam illum maxime pariatur?",
-      links: [],
-    },
+      links: []
+    }
   ];
 
   const [searchResults, setSearchResults] = React.useState(data);
 
   const [modalShow, setModalShow] = React.useState(false);
   const [modalDataIndex, setModalDataIndex] = React.useState(0);
+
+  
+  const [createModalShow, setCreateModalShow] = React.useState(false);
 
   const cardStyle = {
     height: "15rem",
@@ -125,7 +129,12 @@ export default function Dashboard() {
 
               {searchTerm === "" ? (
                 <Col sd={4} xl={4}>
-                  <Card style={cardStyle}>
+                  <Card
+                    style={cardStyle}
+                    onClick={() => {
+                      setCreateModalShow(true);
+                    }}
+                  >
                     <div style={{ margin: "auto" }}>
                       <Card.Img
                         style={{ height: "8rem", width: "8rem" }}
@@ -143,7 +152,14 @@ export default function Dashboard() {
           <DashCardModal
             show={modalShow}
             onHide={() => setModalShow(false)}
-            singlemodal={data[modalDataIndex]}
+            singlemodal={searchResults[modalDataIndex]}
+          />
+
+          <CreateDashCardModal
+            show={createModalShow}
+            onHide={() => setCreateModalShow(false)}
+            setCardData={setSearchResults}
+            cardData={searchResults}
           />
         </Col>
       </Row>
