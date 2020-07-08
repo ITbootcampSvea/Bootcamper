@@ -2,15 +2,19 @@ import React from "react";
 import { Modal, Button, InputGroup, FormControl } from "react-bootstrap";
 
 export default function CreateDashCardModal(props) {
+
+
   const time = new Date();
   const currentTime =
-    time.getHours() + ":" + ("0" + time.getMinutes()).slice(-2);
+    time.getHours() + ":" + ("0" + time.getMinutes().toString()).slice(-2);
 
   const [newCardTitle, setNewCardTitle] = React.useState("");
   const [newCardText, setNewCardText] = React.useState("");
 
+
   const createNewCardData = () => {
-    let allData = props.cardData;
+    let allData = props.carddata;
+    console.log(allData);
     if (newCardText !== "" && newCardTitle !== "") {
       allData.push({
         date: "4 7 2020",
@@ -20,7 +24,7 @@ export default function CreateDashCardModal(props) {
         text: newCardText,
         links: [],
       });
-      props.setCardData(allData);
+      props.setcarddata(allData);
       props.onHide();
       setNewCardTitle("");
       setNewCardText("");
