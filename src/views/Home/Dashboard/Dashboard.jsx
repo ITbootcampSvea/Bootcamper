@@ -37,10 +37,8 @@ export default function Dashboard() {
       results = searchResults.filter((card) =>
         card.title.toLowerCase().includes(searchTerm.toLowerCase())
       );
-      
     }
     setSearchResults(results);
-    
   }, [searchTerm]);
 
   let data = [
@@ -120,20 +118,28 @@ export default function Dashboard() {
             </div>
             <br></br>
             <CardDeck>
-              {searchResults.map((single, index) => (
-                <Col xl={4} key={index}>
-                  <Card
-                    style={cardStyle}
-                    onClick={() => {
-                      setModalShow(true);
-                      setModalDataIndex(index);
-                    }}
-                  >
-                    <DashCard singleCard={single} />
-                  </Card>
-                  <br></br>
-                </Col>
-              ))}
+              {searchResults.length > 0 ? (
+                searchResults.map((single, index) => (
+                  <Col xl={4} key={index}>
+                    <Card
+                      style={cardStyle}
+                      onClick={() => {
+                        setModalShow(true);
+                        setModalDataIndex(index);
+                      }}
+                    >
+                      <DashCard singleCard={single} />
+                    </Card>
+                    <br></br>
+                  </Col>
+                ))
+              ) : (
+                <Card>
+                  <Card.Title style={{ textAlign: "center", margin: "auto" }}>
+                    No results!
+                  </Card.Title>
+                </Card>
+              )}
 
               {searchTerm === "" ? (
                 <Col sd={4} xl={4}>
@@ -157,11 +163,15 @@ export default function Dashboard() {
             </CardDeck>
           </Card>
 
-          <DashCardModal
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-            singlemodal={searchResults[modalDataIndex]}
-          />
+          {searchResults.length > 0 ? (
+            <DashCardModal
+              show={modalShow}
+              onHide={() => setModalShow(false)}
+              singlemodal={searchResults[modalDataIndex]}
+            />
+          ) : (
+            ""
+          )}
 
           <CreateDashCardModal
             show={createModalShow}

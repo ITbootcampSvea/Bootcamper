@@ -74,7 +74,8 @@ export default function Chat(props) {
   };
 
   const time = new Date();
-  const currentTime = time.getHours() + ":" + time.getMinutes();
+  const currentTime =
+    time.getHours() + ":" + ("0" + time.getMinutes().toString()).slice(-2);
 
   return (
     <div className="container">
@@ -84,37 +85,40 @@ export default function Chat(props) {
         </Card.Header>
         <Card.Body style={{ overflowY: "scroll", height: "20rem" }}>
           {chat.map((message, index) => (
-            <Row key={index}>
-              <Col xl={3}>
-                <OverlayTrigger overlay={<Tooltip>{message.name}</Tooltip>}>
-                  <p>
-                    <b>
-                      {message.name === loggedUser
-                        ? ""
-                        : abbrev(message.name) + ":"}
-                    </b>
-                  </p>
-                </OverlayTrigger>
-              </Col>
+            <div>
+              <Row key={index}>
+                <Col xl={3}>
+                  <OverlayTrigger overlay={<Tooltip>{message.name}</Tooltip>}>
+                    <p>
+                      <b>
+                        {message.name === loggedUser
+                          ? ""
+                          : abbrev(message.name) + ":"}
+                      </b>
+                    </p>
+                  </OverlayTrigger>
+                </Col>
 
-              <Col
-                style={{
-                  textAlign: message.name === loggedUser ? "right" : "left",
-                }}
-              >
-                <OverlayTrigger overlay={<Tooltip>{message.time}</Tooltip>}>
-                  <Card
-                    style={
-                      message.name === loggedUser
-                        ? styleLoggedIn
-                        : styleOtherUser
-                    }
-                  >
-                    <p>{message.message}</p>
-                  </Card>
-                </OverlayTrigger>
-              </Col>
-            </Row>
+                <Col
+                  style={{
+                    textAlign: message.name === loggedUser ? "right" : "left",
+                  }}
+                >
+                  <OverlayTrigger overlay={<Tooltip>{message.time}</Tooltip>}>
+                    <Card
+                      style={
+                        message.name === loggedUser
+                          ? styleLoggedIn
+                          : styleOtherUser
+                      }
+                    >
+                      <p>{message.message}</p>
+                    </Card>
+                  </OverlayTrigger>
+                </Col>
+              </Row>
+              <br />
+            </div>
           ))}
         </Card.Body>
         <Card.Footer>
