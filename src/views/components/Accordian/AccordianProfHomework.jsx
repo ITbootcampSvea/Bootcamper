@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Accordion, Row, Col, Form, Button, ButtonGroup } from 'react-bootstrap';
 
-export default function Accordian({ info, status, setStatus }) {
+export default function AccordianProfHomework({ info, status, setStatus }) {
     let date = new Date();
     let dayNumber = date.getDate();
     let dayName = date.toLocaleString('en-US', { weekday: 'long' });

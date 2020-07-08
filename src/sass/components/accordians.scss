@@ -1,0 +1,17 @@
+.accordianCol {
+    @include AligmentFlexCenter;
+}
+
+.accStudentHomeworkCardLbl {
+    @include HeadingFontSizeS;
+    text-transform: capitalize;
+}
+
+.accStudentHomeworkCardPara {
+    @include HeadingFontSizeXS;
+}
+
+.accHomeworkFormFile {
+    background: $secondaryDark;
+    color: $primaryLight;
+}
