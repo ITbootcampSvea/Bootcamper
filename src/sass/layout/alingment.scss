@@ -1,22 +1,19 @@
-.aligmentFlexCenter{
+.aligmentFlexCenter {
+    @include AligmentFlexCenter;
+    @include c-c;
+}
+
+.flexSpaceBeetween {
     display: flex;
-    justify-content: center;
     align-items: center;
-    @include c-c ;
+    justify-content: space-between;
 }
 
-
-.flexSpaceBeetween{
-    display: flex;
-   align-items: center;
-   justify-content: space-between;
-}
-
-.containerPadding{
+.containerPadding {
     padding-top: 5rem;
 }
 
-.marginPadding{
+.marginPadding {
     padding: 0;
     margin: 0;
 }

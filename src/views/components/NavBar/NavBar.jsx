@@ -15,7 +15,7 @@ export default function NavBar() {
             <NavLink className='nav-link navText ' to='/home'>Home</NavLink>
             <NavLink className='nav-link navText ' to='/students' >Students</NavLink>
             <NavLink className='nav-link navText ' to='/assigments' >Assignments</NavLink>
-            <NavLink className='nav-link navText ' to='/hoddme'>Profile</NavLink>
+            <NavLink className='nav-link navText ' to='/workbook'>Workbook</NavLink>
            <Button variant='outline-light' size='lg' className='navBtn'>Logout</Button>
 
           

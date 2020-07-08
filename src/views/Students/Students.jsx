@@ -4,7 +4,7 @@ import { Container, Card, Row, Col, ListGroup } from 'react-bootstrap';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import StudentCardHeader from './StudentCardHeader';
 import SearchBar from '../components/SearchBar/SerachBar';
-import Accordion from '../components/Accordian/Accordian';
+import AccordianProfHomework from '../components/Accordian/AccordianProfHomework';
 import AllStudent from '../../base/AllStudents.json';
 import Tests from '../../base/Tests.json';
 import HomeWork from '../../base/HomeWork.json';
@@ -119,7 +119,7 @@ const Students = () => {
                                 </Card.Body>
                                 <Card.Body className='homeWorkWrapper'>
                                     <Row>
-                                        {status.map(el => <Accordion info={el} key={el.id} status={status} setStatus={setStatus} />)}
+                                        {status.map(el => <AccordianProfHomework info={el} key={el.id} status={status} setStatus={setStatus} />)}
                                     </Row>
                                 </Card.Body>
                             </Card.Body>
