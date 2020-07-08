@@ -22,15 +22,25 @@ export default function Dashboard() {
 
   const [searchTerm, setSearchTerm] = React.useState("");
 
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+  const [modalShow, setModalShow] = React.useState(false);
+  const [createModalShow, setCreateModalShow] = React.useState(false);
+  const [modalDataIndex, setModalDataIndex] = React.useState(0);
+
+  const [searchResultNumber, setSearchResultNumber] = React.useState(0);
 
   React.useEffect(() => {
-    const results = searchResults.filter((card) =>
-      card.title.toLowerCase().includes(searchTerm)
-    );
+    let results = [];
+
+    if (searchTerm == "") {
+      results = data;
+    } else {
+      results = searchResults.filter((card) =>
+        card.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      
+    }
     setSearchResults(results);
+    
   }, [searchTerm]);
 
   let data = [
@@ -41,7 +51,7 @@ export default function Dashboard() {
       author: "Cvijan Peranovic",
       text:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quam adipisci esse corrupti veritatis, quisquam architecto exercitationem illum ipsam soluta dolores, natus reprehenderit in vero laboriosam, maxime repellendus consectetur molestiae.Delectus sed recusandae doloribus non nemo necessitatibus, esse obcaecati quisquam corrupti possimus asperiores eius nostrum vel, assumenda saepe ipsum, est voluptate magnam illum maxime pariatur?",
-      links: []
+      links: [],
     },
     {
       date: "4 7 2020",
@@ -50,7 +60,7 @@ export default function Dashboard() {
       author: "Dusan Bobicic",
       text:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quam adipisci esse corrupti veritatis, quisquam architecto exercitationem illum ipsam soluta dolores, natus reprehenderit in vero laboriosam, maxime repellendus consectetur molestiae.Delectus sed recusandae doloribus non nemo necessitatibus, esse obcaecati quisquam corrupti possimus asperiores eius nostrum vel, assumenda saepe ipsum, est voluptate magnam illum maxime pariatur?",
-      links: []
+      links: [],
     },
     {
       date: "4 7 2020",
@@ -59,7 +69,7 @@ export default function Dashboard() {
       author: "Cvijan Peranovic",
       text:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quam adipisci esse corrupti veritatis, quisquam architecto exercitationem illum ipsam soluta dolores, natus reprehenderit in vero laboriosam, maxime repellendus consectetur molestiae.Delectus sed recusandae doloribus non nemo necessitatibus, esse obcaecati quisquam corrupti possimus asperiores eius nostrum vel, assumenda saepe ipsum, est voluptate magnam illum maxime pariatur?",
-      links: []
+      links: [],
     },
     {
       date: "4 7 2020",
@@ -68,17 +78,15 @@ export default function Dashboard() {
       author: "Dusan Bobicic",
       text:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quam adipisci esse corrupti veritatis, quisquam architecto exercitationem illum ipsam soluta dolores, natus reprehenderit in vero laboriosam, maxime repellendus consectetur molestiae.Delectus sed recusandae doloribus non nemo necessitatibus, esse obcaecati quisquam corrupti possimus asperiores eius nostrum vel, assumenda saepe ipsum, est voluptate magnam illum maxime pariatur?",
-      links: []
-    }
+      links: [],
+    },
   ];
 
   const [searchResults, setSearchResults] = React.useState(data);
 
-  const [modalShow, setModalShow] = React.useState(false);
-  const [modalDataIndex, setModalDataIndex] = React.useState(0);
-
-  
-  const [createModalShow, setCreateModalShow] = React.useState(false);
+  const handleChange = (e) => {
+    setSearchTerm(e);
+  };
 
   const cardStyle = {
     height: "15rem",
@@ -98,7 +106,7 @@ export default function Dashboard() {
                   aria-label="Search dashboard"
                   aria-describedby="basic-addon2"
                   id="searchInput"
-                  onChange={(e) => handleChange(e)}
+                  onChange={(e) => handleChange(e.target.value)}
                 />
               </InputGroup>
             </Col>
@@ -158,8 +166,8 @@ export default function Dashboard() {
           <CreateDashCardModal
             show={createModalShow}
             onHide={() => setCreateModalShow(false)}
-            setCardData={setSearchResults}
-            cardData={searchResults}
+            setcarddata={setSearchResults}
+            carddata={searchResults}
           />
         </Col>
       </Row>
