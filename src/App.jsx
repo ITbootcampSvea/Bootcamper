@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { BrowserRouter, Switch, Redirect } from "react-router-dom";
 import StudentRoute from "./routes/StudentRoute";
 import PublicRoute from "./routes/PublicRoute";
@@ -7,8 +7,14 @@ import Login from './views/Login/Login';
 import Students from './views/Students/Students';
 import Assignments from './views/Assignments/Assignments';
 import Workbook from './views/Workbooks/Workbook'
-
+import startSocketConnection from './services/socket.services';
 function App() {
+  useEffect(() => {
+    startSocketConnection();
+    return () => {
+      
+    }
+  }, [])
   return (
     
     <BrowserRouter>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal, Button, InputGroup, FormControl } from "react-bootstrap";
+import { createCard } from "../../../../services/api.services";
 
 export default function CreateDashCardModal(props) {
 
@@ -14,6 +15,20 @@ export default function CreateDashCardModal(props) {
 
   const createNewCardData = () => {
     let allData = props.carddata;
+    let temp = {
+      links: [
+          "tralalalal",
+          "blablabla"
+      ],
+      title: "Nesto bitno",
+      generation: "5/2020-js/2-bg",
+      author: "Cvijan",
+      description: "Pogledajte ove tutorijale do sutra!!!",
+  }
+
+    createCard(temp).then(res=>{
+       console.log('response from API',res);
+    })
     console.log(allData);
     if (newCardText !== "" && newCardTitle !== "") {
       allData.push({
