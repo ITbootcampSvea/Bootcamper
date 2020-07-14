@@ -1,0 +1,82 @@
+.profileWrapper{
+    height: calc(100vh-58px);
+    @include  AligmentFlexCenter;
+}
+
+.profileCard{
+    width: 40%;
+    height: 95%;
+    border-radius: 0 !important;
+    border: none!important;
+    background: white !important;
+}
+
+.profileCardBg{
+    height: 20rem;
+    border-radius: 0;
+    position: relative;
+}
+
+
+.profileCardAvatar{
+    width: 12rem;
+    height: 12em;
+    border-radius: 50%;
+    border: 0.3rem solid white;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.profileCardBody{
+    height: 22rem;
+    @include AligmentFlexCenter;
+}
+
+
+.profileCardFooter{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: $bootcampPrimaryColor;
+    border-radius: 0!important;
+}
+
+
+.profileFooterList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.profileFooterList li {
+    margin: 0 4rem;
+    color: $primaryDark;
+}
+
+.profileFooterList li i {
+    color: $primaryDark;
+    font-size: 2.2rem;
+    padding: 1.2rem 0;
+    @include baseTransition;
+    cursor: pointer;
+    filter: drop-shadow(0.1rem 0.1rem 0.4rem rgb(248, 168, 56));
+    &:hover {
+        color: $secondaryDark;
+        transform: scale(1.1);
+    }
+}
+
+.profileCardInfo{
+    padding-top: 5rem;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+
