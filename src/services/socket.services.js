@@ -2,7 +2,7 @@ import socketIO from 'socket.io-client';
 
 const baseURL = "http://localhost:4000";
 
-
+ 
 
 export default function startSocketConnection(){
     const socket = socketIO.connect(baseURL);
@@ -11,6 +11,14 @@ export default function startSocketConnection(){
         console.log("socket connected");
     })
     
+    socket.on('newdashcard',(data)=>{
+        console.log("response socket", data);
+        //update redux state
+    })
+    socket.on('editeddashcard',(data)=>{
+        console.log("response socket", data);
+        //update redux state
+    })
     socket.on('newdashcard',(data)=>{
         console.log("response socket", data);
         //update redux state
