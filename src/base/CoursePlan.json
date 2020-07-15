@@ -1,0 +1,85 @@
+[{
+    "teachingUnit": "O Kursu"
+},
+{
+    "teachingUnit": "Okruzenje"
+},
+{
+    "teachingUnit": "HTML-5"
+},
+{
+    "teachingUnit": "CSS-3"
+},
+{
+    "teachingUnit": "Git/GitHub"
+},
+{
+    "teachingUnit": "Promenljive"
+},
+{
+    "teachingUnit": "Doseg Imena"
+},
+{
+    "teachingUnit": "Tipovi Podataka"
+},
+{
+    "teachingUnit": "Granjanja"
+},
+{
+    "teachingUnit": "Petlje"
+},
+{
+    "teachingUnit": "Funkcije"
+},
+{
+    "teachingUnit": "Nizovi"
+},
+{
+    "teachingUnit": "Sirenje Nizova(Spread Operator)"
+},
+{
+    "teachingUnit": "DOM"
+},
+{
+    "teachingUnit": "Objekti"
+},
+{
+    "teachingUnit": "Destrukcija Objekta(Object Destructuring)"
+},
+{
+    "teachingUnit": "Klase"
+},
+{
+    "teachingUnit": "Moduli"
+},
+{
+    "teachingUnit": "Bakend"
+},
+{
+    "teachingUnit": "Aplikacioni Programski Interfejs/API"
+},
+{
+    "teachingUnit": "Nizovi-Napredno"
+},
+{
+    "teachingUnit": "Tipovi Podataka-Napredno"
+},
+{
+    "teachingUnit": "React-JS/Uvodno"
+},
+{
+    "teachingUnit": "React-JS/Props"
+},
+{
+    "teachingUnit": "React-JS/useState"
+},
+{
+    "teachingUnit": "React-JS/useEffect"
+},
+{
+    "teachingUnit": "React-JS/Redux"
+},
+{
+    "teachingUnit": "Projekat"
+}
+]

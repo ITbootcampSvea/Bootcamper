@@ -1,0 +1,29 @@
+.modals {
+    background-color: $secondaryDark;
+}
+
+.modal-40w{
+    max-width: 40vw;
+}
+
+.modalHeader{
+    background-color: $secondaryLight;
+    @include HeadingFontSizeM;
+    @include TextShadow;
+
+}
+
+.modalListItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $secondaryDark;
+    @include HeadingFontSizeS;
+    color: $primaryLight;
+    text-shadow: 0.1rem 0.1rem 0 #333032;
+}
+
+.modalListBody {
+    @include Srcoll;
+    max-height: 75vh;
+}

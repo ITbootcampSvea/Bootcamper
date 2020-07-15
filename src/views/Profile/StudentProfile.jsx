@@ -1,9 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import NavBar from '../components/NavBar/NavBar';
 import { Container, Card, Col, Table, Form, Button, ProgressBar } from 'react-bootstrap';
 import bg from '../img/loginbg.jpg';
 import avatar from '../img/profile.jpg';
-import AllStudents from '../../base/AllStudents.json'
+import AllStudents from '../../base/AllStudents.json';
+import PlanModal from '../components/Modals/PlanModal'
 
 export default function StudentProfile() {
     const inputFile = useRef(null)
@@ -12,6 +13,13 @@ export default function StudentProfile() {
     const handleAvatar = () => {
         inputFile.current.click();
     }
+
+    const [show, setShow] = useState(false);
+    console.log(show, 'pera');
+
+
+    const handleShow = () => setShow(true);
+
     return (
         <div className='wrapper'>
             <NavBar></NavBar>
@@ -37,13 +45,13 @@ export default function StudentProfile() {
                             <h4>{profileStudent.studentID}</h4>
                             <h4>{profileStudent.phone}</h4>
                             <h4> {profileStudent.email}</h4>
-                            </div>
+                        </div>
 
-                    </Card.Body>)
+                    </Card.Body>
                         <Card.Footer className='profileCardFooter'>
                         <Col>
                             <ul className="profileFooterList">
-                                <li><i class="fa fa-server" title='See Course Plan and Program'></i></li>
+                                <li><i class="fa fa-server" title='See Course Plan and Program' onClick={() => handleShow()}></i><PlanModal show={show} setShow={setShow} /></li>
                                 <li><i class="fa fa-pencil" title='Change Your Password'></i></li>
                                 <li><i class="fa fa-graduation-cap" title='See Your Test Results'></i></li>
                             </ul>
