@@ -24,7 +24,7 @@ const Students = () => {
     }
 
     const applyProgressStyle = (percentage) => {
-        console.warn(percentage)
+      
 
         var progressStyle;
         switch (true) {

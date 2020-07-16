@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
 import NavBar from '../components/NavBar/NavBar';
-import { Container, Card, Col, Table, Form, Button, ProgressBar } from 'react-bootstrap';
+import { Container, Card, Col,  Form, Button, ProgressBar } from 'react-bootstrap';
 import bg from '../img/loginbg.jpg';
 import avatar from '../img/profile.jpg';
 import AllStudents from '../../base/AllStudents.json';
-import PlanModal from '../components/Modals/PlanModal'
+import PlanModal from '../components/Modals/PlanModal';
+import TestsModal from '../components/Modals/TestsModal';
+import PasswordModal from '../components/Modals/PasswordModal'
 
 export default function StudentProfile() {
     const inputFile = useRef(null)
@@ -15,10 +17,14 @@ export default function StudentProfile() {
     }
 
     const [show, setShow] = useState(false);
-    console.log(show, 'pera');
+    const [testShow, setTestShow] = useState(false);
+    const [passShow, setPassShow] = useState(false);
+  
 
 
     const handleShow = () => setShow(true);
+    const handleTestShow=()=>setTestShow(true);
+    const handlePassShow=()=>setPassShow(true)
 
     return (
         <div className='wrapper'>
@@ -52,8 +58,8 @@ export default function StudentProfile() {
                         <Col>
                             <ul className="profileFooterList">
                                 <li><i class="fa fa-server" title='See Course Plan and Program' onClick={() => handleShow()}></i><PlanModal show={show} setShow={setShow} /></li>
-                                <li><i class="fa fa-pencil" title='Change Your Password'></i></li>
-                                <li><i class="fa fa-graduation-cap" title='See Your Test Results'></i></li>
+                                <li><i class="fa fa-cog" title='Change Your Password' onClick={() => handlePassShow()}></i> <PasswordModal passShow={passShow} setPassShow={setPassShow}/></li>
+                                <li><i class="fa fa-graduation-cap" title='See Your Test Results' onClick={() => handleTestShow()}></i> <TestsModal testShow={testShow} setTestShow={setTestShow} /></li>
                             </ul>
                         </Col>
                     </Card.Footer>

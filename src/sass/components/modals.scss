@@ -27,3 +27,11 @@
     @include Srcoll;
     max-height: 75vh;
 }
+
+.modalTestsBody{
+    @include AligmentFlexCenter;
+}
+
+.modalCircleSvg{
+    padding: 1rem;
+}

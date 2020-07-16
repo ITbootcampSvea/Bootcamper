@@ -8,7 +8,7 @@ export default function PlanModal({ show, setShow }) {
 
     return (
         <>
-            <Modal  dialogClassName="modal-40w" show={show} onHide={() => handleClose()}>
+            <Modal centered  dialogClassName="modal-40w" show={show} onHide={() => handleClose()}>
                 <Modal.Header closeButton className='modalHeader'>
                     <Modal.Title>Course Plan</Modal.Title>
                 </Modal.Header>
