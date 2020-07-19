@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button} from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import Tests from '../../../base/Tests.json'
 
@@ -12,7 +12,7 @@ export default function TestsModal({ testShow, setTestShow }) {
     }
 
     const applyProgressStyle = (percentage) => {
-      
+
 
         var progressStyle;
         switch (true) {
@@ -54,15 +54,18 @@ export default function TestsModal({ testShow, setTestShow }) {
         return progressStyle;
     }
     return (
-       <>
-            <Modal centered  show={testShow} onHide={() => handleTestsClose()}>
+        <>
+            <Modal centered show={testShow} onHide={() => handleTestsClose()}>
                 <Modal.Header closeButton className='modalHeader'>
                     <Modal.Title>Mihajlo's Tests</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='modalTestsBody' >
-             {Tests.map(el=><CircularProgressbar className='modalCircleSvg'  test={el} key={el.id} value={el.percentage} background={true}
-                                                    text={`${el.percentage}%`}
-                                                    styles={buildStyles(applyProgressStyle(el.percentage))} ></CircularProgressbar>)}   
+                    {Tests.map(el => <div className='modalProgressBody'>
+                        <label>{el.testName}</label>
+                        <CircularProgressbar className='modalCircleSvg' test={el} key={el.id} value={el.percentage} background={true}
+                            text={`${el.percentage}%`}
+                            styles={buildStyles(applyProgressStyle(el.percentage))} ></CircularProgressbar>
+                    </div>)}
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="dark" onClick={() => handleTestsClose()}>
@@ -70,7 +73,7 @@ export default function TestsModal({ testShow, setTestShow }) {
           </Button>
                 </Modal.Footer>
             </Modal>
- 
-       </>
+
+        </>
     )
 }

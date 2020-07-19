@@ -17,13 +17,12 @@ export default function NavBar() {
           <NavLink className='nav-link navText ' to='/assigments' >Assignments</NavLink>
           <NavLink className='nav-link navText ' to='/workbook'>Workbook</NavLink>
           <NavLink className='nav-link navText ' to='/profile'>Profile</NavLink>
+          <NavLink className='nav-link navText ' to='/about'>About Us</NavLink>
           <NavDropdown className='nav-link navText ' title="Generation" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.2">2020-08</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">2020-03</NavDropdown.Item>
           </NavDropdown>
           <Button variant='outline-light' size='lg' className='navBtn'>Logout</Button>
-
-
         </Nav>
       </Navbar.Collapse>
     </Navbar>

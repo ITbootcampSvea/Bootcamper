@@ -8,7 +8,9 @@ import Students from './views/Students/Students';
 import Assignments from './views/Assignments/Assignments';
 import Workbook from './views/Workbooks/Workbook'
 import startSocketConnection from './services/socket.services';
-import StudentProfile from './views/Profile/StudentProfile'
+import StudentProfile from './views/Profile/StudentProfile';
+import AboutUs from './views/AboutUs/AboutUs'
+
 function App() {
   useEffect(() => {
     startSocketConnection();
@@ -27,6 +29,7 @@ function App() {
       <StudentRoute component={Assignments} path="/assigments"/>
       <StudentRoute component={Workbook} path="/workbook"/>
       <StudentRoute component={StudentProfile} path="/profile"/>
+      <StudentRoute component={AboutUs} path="/about"/>
 {/* 
         <PublicRoute component={LogIn } path="/login" />
 

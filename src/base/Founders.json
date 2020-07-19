@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Marko",
+        "lastName": "Planic",
+        "linkedin": "https://www.linkedin.com/in/markoplanic/",
+        "position": "Front End Web Developer",
+        "photo": "https://media-exp1.licdn.com/dms/image/C4D03AQEaKNgccx5p2Q/profile-displayphoto-shrink_800_800/0?e=1600905600&v=beta&t=K70J-qjwQpIi8da3pdB7OkPwPg26v3U_NbGJnFcZvQ0"
+    },
+    {
+        "name": "Milos",
+        "lastName": "Ristic",
+        "linkedin": "https://www.linkedin.com/in/milos-ristic-410b95195/",
+        "position": "Front End Web Developer",
+        "photo": "https://media-exp1.licdn.com/dms/image/C4E03AQHI2djDZd9AFA/profile-displayphoto-shrink_800_800/0?e=1600905600&v=beta&t=cral7vr2e1ZCkZsSYLxNnPFES6IhDKCZnVWOayQ9tTw"
+    },
+    {
+        "name": "Danko",
+        "lastName": "Novovic",
+        "linkedin": "https://www.linkedin.com/in/danko-novovic/",
+        "position": "Front End Web Developer",
+        "photo": "https://media-exp1.licdn.com/dms/image/C5603AQG9LZZ6EcG5UQ/profile-displayphoto-shrink_800_800/0?e=1600905600&v=beta&t=xlpn6epDGNwfEUqtp7kcuhQT_klJvHVX8B2jpDtGhvc"
+    }
+]
